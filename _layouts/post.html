@@ -2,7 +2,9 @@
 layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <img class="post__cover" src="{{ page.cover-image }}"/>
+  {%- if page.cover-image -%}
+    <img class="post__cover" src="{{ page.cover-image }}"/>
+  {%- endif -%}
   <header class="post__header">
     <h1 class="post__title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post__meta">

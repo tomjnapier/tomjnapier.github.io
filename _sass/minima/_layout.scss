@@ -107,13 +107,8 @@
  */
 .site-footer {
   border-top: 1px solid $grey-color-light;
-  background-color: #2d383b;
-  color: white;
+  background-color: #f0f9fb;
   padding: $spacing-unit*2 0;
-
-  li, p {
-    color: #b6dce7
-  }
 }
 
 .footer-heading {
@@ -217,6 +212,10 @@
 /**
  * Posts
  */
+.post {
+  font-size: 1.25rem;
+}
+
 .post__header {
   margin-bottom: $spacing-unit;
 }
