@@ -2,7 +2,7 @@
 layout: page
 title: Blog
 permalink: /blog/
-layout: home
+layout: blog
 order: 1
 list_title: Stuff
 ---

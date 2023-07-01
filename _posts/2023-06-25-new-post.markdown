@@ -1,8 +1,0 @@
----
-layout: post
-title:  "New Post"
-date:   2023-06-25 10:02:09 +0100
-categories: reviews
----
-
-Here's a new post

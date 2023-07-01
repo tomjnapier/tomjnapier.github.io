@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color;
+  border-top: 3px solid #577780;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
@@ -107,7 +107,13 @@
  */
 .site-footer {
   border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
+  background-color: #2d383b;
+  color: white;
+  padding: $spacing-unit*2 0;
+
+  li, p {
+    color: #b6dce7
+  }
 }
 
 .footer-heading {
@@ -176,7 +182,6 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
   flex: 1;
 }
 
@@ -212,11 +217,22 @@
 /**
  * Posts
  */
-.post-header {
+.post__header {
   margin-bottom: $spacing-unit;
 }
 
-.post-title {
+.post__cover {
+  margin-top: 4rem;
+  width: 100vw;
+  max-width: none;
+  height: 30rem;
+  object-fit: cover;
+  margin-bottom: 0rem;
+  margin-left: calc((-100vw + 940px) / 2);
+  //margin-right: calc((-100vw + 940px) / 2);
+}
+
+.post__title {
   @include relative-font-size(4);
   letter-spacing: -1px;
   line-height: 1;
@@ -253,4 +269,15 @@
       @include relative-font-size(1.125);
     }
   }
+}
+
+/**
+ * Post
+ */
+.post {
+  max-width: 75%;
+}
+
+.post__header {
+  margin-top: 4rem;
 }

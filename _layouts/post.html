@@ -2,10 +2,10 @@
 layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
+  <img class="post__cover" src="{{ page.cover-image }}"/>
+  <header class="post__header">
+    <h1 class="post__title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post__meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
@@ -18,10 +18,6 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
