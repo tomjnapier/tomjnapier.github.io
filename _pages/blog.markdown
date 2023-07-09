@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 layout: blog
 order: 1
-list_title: Stuff
+list_title: Latest posts
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Just a place for my thoughts on the work that I do, web development in general, and reviews of books, games, movies and anything else. 

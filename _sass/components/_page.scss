@@ -1,0 +1,61 @@
+.page__heading {
+    @include relative-font-size(4);
+    letter-spacing: -1px;
+    line-height: 1;
+    font-family: $header-font-family;
+  
+    @include media-query($on-laptop) {
+      @include relative-font-size(2.25);
+    }
+  }
+
+
+/**
+ * Page content
+ */
+.page-content {
+    flex: 1;
+}
+
+.page__header {
+    margin-top: 4rem;
+}
+  
+.page__title {
+    
+    @include relative-font-size(4);
+    
+    letter-spacing: -1px;
+    line-height: 1;
+    font-family: $header-font-family;
+  
+    @include media-query($on-laptop) {
+      @include relative-font-size(2.25);
+    }
+
+    font-weight: 900;
+}
+  
+.post-list-heading {
+    @include relative-font-size(1.75);
+}
+  
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    @include relative-font-size(1.5);
+    display: block;
+}
