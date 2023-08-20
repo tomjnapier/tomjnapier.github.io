@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+order: 3
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I'm not currently taking on work, but if you do want to contact me about, well, anything, you can reach me at [hi@tomjnapier.co.uk](mailto:hi@tomjnapier.co.uk)

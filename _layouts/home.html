@@ -9,8 +9,13 @@ layout: default
     </header>
   {%- endif -%}
 
-  <img alt="Me and my partner Jen, bikepacking in Scotland" src="{{ "/assets/me-and-jen-in-scotland.jpg" | relative_url }}"/>
-
+  <img class="sticker" alt="Me and my partner Jen, bikepacking in Scotland" src="{{ "/assets/me-and-jen-in-scotland.jpg" | relative_url }}"/>
+  <h1>Hi there, I'm Tom</h1>
   {{ content }}
+  <ul class="card-list">
+    <li class="card-list__card card"><a href="">Read more about me</a></li>
+    <li class="card-list__card card"><a href="">Read some stuff I wrote</a></li>
+    <li class="card-list__card card"><a href="">Get in touch with me</a></li>
+  </ul>
 
 </div>

@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Blog
+title: Articles
 permalink: /blog/
 layout: blog
-order: 1
+order: 2
 list_title: Latest posts
 ---
 

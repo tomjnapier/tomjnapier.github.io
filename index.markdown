@@ -5,4 +5,6 @@
 layout: home
 ---
 
-Hi there, I'm Tom. I'm a web developer and accessibilty specialist. I'm currently working for the civil service in the UK.
+I'm a web developer and accessibilty specialist. 
+
+I'm currently working for the civil service in the UK.

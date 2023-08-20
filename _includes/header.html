@@ -4,7 +4,26 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+      <svg viewbox="0 0 1000 800" width="1000" height="800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="none" d="M0 0h1000v800H0z"/>
+        <circle cx="117.188" cy="145.188" r="117.188" class="accent-one--fill"/>
+        <circle cx="372.396" cy="145.188" r="117.188" class="accent-one--fill"/>
+        <circle cx="372.396" cy="400.188" r="117.188" class="accent-one--fill"/>
+        <circle cx="627.604" cy="145.188" r="117.188" class="accent-one--fill"/>
+        <circle cx="883.188" cy="145.188" r="117.188" class="accent-one--fill" fill-opacity=".3"/>
+        <circle cx="117.188" cy="400.188" r="117.188" class="accent-one--fill" fill-opacity=".3"/>
+        <circle cx="117.188" cy="656.188" r="117.188" class="accent-one--fill" fill-opacity=".3"/>
+        <circle cx="372.396" cy="656.188" r="117.188" class="accent-one--fill"/>
+        <circle cx="882.812" cy="400.396" r="117.188" class="accent-two--fill"/>
+        <circle cx="627.604" cy="400.396" r="117.188" class="accent-two--fill"/>
+        <circle cx="882.812" cy="655.604" r="117.188" class="accent-two--fill"/>
+        <circle cx="627.604" cy="655.604" r="117.188" class="accent-two--fill"/>
+    </svg>
+      <span class="visually-hidden">
+        {{ site.title | escape }}
+      </span>
+    </a>
 
     {%- if page_paths -%}
       <nav class="site-nav">
@@ -13,9 +32,14 @@
         <ul class="site-nav__links">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
+            {%- if my_page.title or my_page.menuName -%}
+            {%- if my_page.menuName -%}
+              {%- assign navTitle = my_page.menuName -%}
+            {%- else -%}
+              {%- assign navTitle = my_page.title -%}
+            {%- endif -%}
             <li class="site-nav__link-item">
-              <a class="site-nav__link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              <a class="site-nav__link" href="{{ my_page.url | relative_url }}">{{ navTitle | escape }}</a>
             </li>
             {%- endif -%}
           {%- endfor -%}

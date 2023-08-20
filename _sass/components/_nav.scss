@@ -1,0 +1,71 @@
+.site-nav {
+
+    float: right;
+    line-height: $base-line-height * $base-font-size * 2.25;
+  
+    &__links {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+    }
+  
+    &__link-item {
+      display: inline-block;
+    }
+  
+    &__link {
+        color: var(--text-color);
+        line-height: $base-line-height;
+        padding: 0.5rem;
+        font-weight: $base-bold-weight;
+        font-family: $header-font-family;
+        font-size: 1.5rem;
+
+        &, &:visited {
+            color: var(--text-color);
+        }
+
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+    }
+  
+}
+
+.bypass-link {
+    background-color: var(--accent-two);
+    color: var(--accent-two-on-color);
+    font-weight: bold;
+    padding: 0.5rem;
+  
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    display: inline-block;
+  
+    &:focus {
+        position: static !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0rem !important;
+        overflow: visible !important;
+        clip: auto !important;
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+        white-space: inherit !important;
+        text-align: center;
+    }
+  
+  }
