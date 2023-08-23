@@ -37,7 +37,13 @@ header_pages:
   - _pages/about.markdown
   - _pages/contact.markdown
 
+footer_pages: 
+  - _pages/cookies.markdown
+  - _pages/accessibility-statement.markdown
+
 include: ['_pages']
+
+show_excerpts: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

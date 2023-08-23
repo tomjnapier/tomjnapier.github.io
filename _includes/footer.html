@@ -1,3 +1,5 @@
+{%- assign page_paths = site.footer_pages -%}
+
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
@@ -6,14 +8,37 @@
     <h2 class="footer-heading">{{ site.title | escape }}</h2>
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        {%- include social.html -%}
-      </div>
       <div class="footer-col footer-col-3">
         <p>{{- site.description | escape -}}</p>
       </div>
+      <div class="footer-col footer-col-1">
+        {%- include social.html -%}
+      </div>
     </div>
 
+  </div>
+
+  <div class="wrapper">
+    {%- if page_paths -%}
+    <nav class="footer-nav" aria-labelledby="footer-nav-heading">
+      <h2 id="footer-nav-heading" class="visually-hidden">Legal links</h2>
+      <ul class="footer-nav__links">
+        {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title or my_page.menuName -%}
+          {%- if my_page.menuName -%}
+            {%- assign navTitle = my_page.menuName -%}
+          {%- else -%}
+            {%- assign navTitle = my_page.title -%}
+          {%- endif -%}
+          <li class="footer-nav__link-item">
+            <a class="footer-nav__link" href="{{ my_page.url | relative_url }}">{{ navTitle | escape }}</a>
+          </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </nav>
+  {%- endif -%}
   </div>
 
 </footer>

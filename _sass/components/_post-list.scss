@@ -1,0 +1,49 @@
+.post-list {}
+
+.post-list__heading {}
+
+.post-list__items {
+    list-style-type: none;
+    margin: 0;
+}
+
+.post-list__item {
+
+}
+
+.post {
+    background-color: var(--background--light);
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.post__link {
+
+    padding: 2rem;
+    display: block;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+}
+
+.post__meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post__meta {
+    color: var(--text-color);
+}
+
+.post__title {
+    font-size: 2rem;
+    letter-spacing: 0;
+    color: var(--text-color);
+}
+
+.post__teaser {
+    color: var(--text-color);
+}

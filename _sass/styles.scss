@@ -26,6 +26,10 @@ $content-width:    900px !default;
 $on-palm:          600px !default;
 $on-laptop:        900px !default;
 
+:root {
+  --light-grey:      hsla(0, 0%, 100%, 0.5);
+}
+
 .dark-theme {
   --accent-one:       #ff2a6d;
   --accent-two:       #05d9e8;
@@ -89,8 +93,10 @@ $on-laptop:        900px !default;
 @import
   "components/base",
   "components/layout",
+  "components/header",
   "components/footer",
   "components/nav",
   "components/page",
+  "components/post-list",
   "components/syntax-highlighting"
 ;

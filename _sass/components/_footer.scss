@@ -1,68 +1,82 @@
 /**
  * Site footer
  */
- .site-footer {
+.site-footer {
     border-top: 2px solid var(--border);
     background-color: var(--background--dark);
-    padding: $spacing-unit*2 0;
-  }
-  
-  .footer-heading {
+    padding: $spacing-unit*2 0 0;
+}
+
+.footer-heading {
     @include relative-font-size(1.125);
     margin-bottom: calc( #{$spacing-unit} / 2);
-  }
-  
-  .contact-list,
-  .social-media-list {
+}
+
+.contact-list,
+.social-media-list {
     list-style: none;
     margin-left: 0;
-  }
-  
-  .footer-col-wrapper {
+}
+
+.footer-nav {
+
+    margin-bottom: 2rem;
+
+    &__links {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    &__link {
+        font-size: 1rem;
+    }
+
+}
+
+.footer-col-wrapper {
     @include relative-font-size(0.9375);
     color: var(--background--dark-on-color);
     margin-left: calc( -#{$spacing-unit} / 2);
-  }
-  
-  .footer-col {
-    float: left;
+    display: flex;
+}
+
+.footer-col {
     margin-bottom:calc( #{$spacing-unit} / 2);
     padding-left:calc( #{$spacing-unit} / 2);
-  }
-  
-  .footer-col-1 {
+}
+
+.footer-col-1 {
     width: -webkit-calc(35% - (#{$spacing-unit} / 2));
     width:         calc(35% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-2 {
+}
+
+.footer-col-2 {
     width: -webkit-calc(20% - (#{$spacing-unit} / 2));
     width:         calc(20% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-3 {
+}
+
+.footer-col-3 {
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
     width:         calc(45% - (#{$spacing-unit} / 2));
-  }
-  
-  @include media-query($on-laptop) {
+}
+
+@include media-query($on-laptop) {
     .footer-col-1,
     .footer-col-2 {
-      width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-      width:         calc(50% - (#{$spacing-unit} / 2));
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
     }
-  
+
     .footer-col-3 {
-      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-      width:         calc(100% - (#{$spacing-unit} / 2));
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
     }
-  }
-  
-  @include media-query($on-palm) {
+}
+
+@include media-query($on-palm) {
     .footer-col {
-      float: none;
-      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-      width:         calc(100% - (#{$spacing-unit} / 2));
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
     }
-  }
-  
+}

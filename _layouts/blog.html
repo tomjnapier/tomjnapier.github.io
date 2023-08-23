@@ -4,29 +4,39 @@ layout: default
 
 <div class="blog page">
   {%- if page.title -%}
-  <header class="page__header">
+  <div class="page__header">
     <h1 class="page__title">{{ page.title }}</h1>
-  </header>
+  </div>
   {%- endif -%}
 
   {{ content }}
-
   {%- if site.posts.size > 0 -%}
     <section class="post-list">
-      <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-      <ul class="post-list">
+      <h2 class="post-list__heading">{{ page.list_title | default: "Posts" }}</h2>
+      <ul class="post-list__items">
         {%- for post in site.posts -%}
-        <li>
+        <li class="post-list__item post">
+          <a class="post__link" href="{{ post.url | relative_url }}">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
+            <div class="post__meta">
+              {%- if post.categories -%}
+                <div class="post__categories">
+                  {%- for category in post.categories -%}
+                    <span>{{category}}</span>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+              <div class="post__date">{{ post.date | date: date_format }}</div>
+            </div>
+            <h3 class="post__title">
               {{ post.title | escape }}
-            </a>
-          </h3>
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
+            </h3>
+            {%- if post.custom-excerpt != '' -%}
+              <div class="post__teaser">
+                {{ post.custom-excerpt }}
+              </div>
+            {%- endif -%}
+          </a>
         </li>
         {%- endfor -%}
       </ul>
