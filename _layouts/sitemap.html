@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="page">
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title | escape }}</h1>
+  </header>
+
+  {% assign sitemap_pages = site.pages | where: "show_in_sitemap", true %}
+
+  <div class="page__content">
+    <h2>Pages</h2>
+    <ul>
+        {% for page in sitemap_pages %}
+        {% assign page-name = page.page-title | default: page.title %}
+        <li><a href="{{ page.url | prepend: site.baseurl }}">{{page-name}}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Posts</h2>
+    <ul>
+        {% for post in site.posts %}
+        <li><a href="{{site.url}}{{ post.url | remove: 'index.html' }}">{{post.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+</article>

@@ -307,14 +307,15 @@ pre {
     width: 1rem;
     height: 1rem;
     display: inline-block;
-    fill: var(--text-color-light);
+    fill: var(--background--dark-on-color);
     vertical-align: text-top;
     margin-right: 0.5rem;
 }
 
 .social-media-list {
 
-  a {
+  &__link {
+    color: var(--footer-link-color);
     display: flex;
     align-items: center;
   }

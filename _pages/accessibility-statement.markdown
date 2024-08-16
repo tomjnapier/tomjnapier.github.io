@@ -4,6 +4,7 @@ title: Accessibility Statement
 menuName: Accessibility Statement
 permalink: /accessibility-statement/
 order: 2
+show_in_sitemap: true
 ---
 
 This accessibility statement applies to tomjnapier.co.uk.

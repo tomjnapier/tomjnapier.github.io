@@ -43,6 +43,7 @@ header_pages:
 footer_pages: 
   - _pages/cookies.markdown
   - _pages/accessibility-statement.markdown
+  - _pages/sitemap.markdown
 permalink: /:categories/:year/:month/:day/:title
 
 include: ['_pages']

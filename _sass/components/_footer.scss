@@ -40,10 +40,24 @@
     &__links {
         list-style-type: none;
         margin: 0;
+        display: flex;
     }
 
     &__link {
         font-size: 1rem;
+        color: var(--footer-link-color);
+
+        &:hover {
+            color: var(--footer-link-color);
+        }
+
+        &:visited {
+            color: var(--footer-link-color);
+        }
+    }
+
+    &__link-item {
+        padding: 0 1rem 0 0;
     }
 
 }
