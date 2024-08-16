@@ -9,7 +9,7 @@
  * Posts
  */
 .post {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .post__header {
@@ -50,7 +50,7 @@
  * Post
  */
 .post {
-  max-width: 75%;
+  max-width: 100%;
 }
 
 .post__header {
@@ -64,7 +64,20 @@
   max-width: 100%;
 }
 
+@include media-query($on-phone) {
+
+  .post {
+    max-width: 80%;
+  }
+
+}
+
 @include media-query($on-tablet) {
+
+  .post {
+    font-size: 1.5rem;
+    max-width: 75%;
+  }
 
   .page__title {
     max-width: 60%;

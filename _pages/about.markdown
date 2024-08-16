@@ -1,6 +1,7 @@
 ---
 layout: page
 title: The awkward bit where I talk about myself
+page-title: About
 menuName: About
 permalink: /about/
 order: 1

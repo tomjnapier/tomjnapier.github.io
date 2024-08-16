@@ -32,6 +32,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+host: localhost
 gems: [jekyll-paginate-v2]
 
 header_pages:
@@ -42,6 +43,7 @@ header_pages:
 footer_pages: 
   - _pages/cookies.markdown
   - _pages/accessibility-statement.markdown
+permalink: /:categories/:year/:month/:day/:title
 
 include: ['_pages']
 show_excerpts: true

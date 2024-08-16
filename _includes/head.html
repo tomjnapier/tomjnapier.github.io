@@ -1,9 +1,10 @@
+{% assign pageTitle = page.page-title | default: page.title %}
 <head>
-  <title>{{ page.page-title }} | Tom J Napier</title>
+  <title>{{ pageTitle }} | Tom J Napier</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
+  {%- seo title=false -%}
   <link rel="stylesheet" href="{{ "/assets/styles/main.css" | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
