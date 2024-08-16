@@ -102,7 +102,11 @@
     text-decoration: underline;
     text-align: left;
     font-size: 1rem;
-    
+
+    .theme--light & {
+        color: var(--background);
+    }
+
     &:visited {
         color: var(--accent-two-on-color);
     }
@@ -118,12 +122,6 @@
         clip-path: none !important;
         white-space: inherit !important;
         outline: 0px;
-
-
-        .theme--light & {
-            color: var(--background);
-        }
-    
     }
   
 }

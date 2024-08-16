@@ -315,9 +315,13 @@ pre {
 .social-media-list {
 
   &__link {
-    color: var(--footer-link-color);
     display: flex;
     align-items: center;
+
+    &, &:visited {
+      color: var(--footer-link-color);
+    }
+
   }
 
   li + li {
