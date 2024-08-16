@@ -2,7 +2,7 @@
 
 // Define defaults for each variable.
 
-$base-font-family: 'inconsolata', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-family: 'Work Sans', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-size:   20px !default;
 $base-font-weight: 400 !default;
 $base-bold-weight: 700 !default;
@@ -21,38 +21,50 @@ $grey-color-dark:  darken($grey-color, 5%) !default;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    900px !default;
+$content-width:    1000px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        900px !default;
+$on-phone:         600px !default;
+$on-tablet:        900px !default;
+$on-laptop:        1200px !default;
 
-:root {
-  --light-grey:      hsla(0, 0%, 100%, 0.5);
+html {
+  --radius: 6px;
+  --radius--large: 10px;
+  --content-width: 1000px;
+  --content-width--large: 1200px;
 }
 
-.dark-theme {
+html.theme--dark {
   --accent-one:       #ff2a6d;
   --accent-two:       #05d9e8;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
   --background:          #050a18;
   --border:              #1d2230;
-  --background--light:    hsl(228, 50%, 15%);
+  --background--light:   hsl(228, 50%, 15%);
   --background--dark:    hsl(228, 100%, 2%);
   --background--dark-on-color: hsl(228, 28%, 70%);
-  --text-color:        hsl(228, 0%, 100%);
+  --link-color:          hsl(184, 100%, 56%);
+  --link-color-hover:    hsl(198, 100%, 47%);
+  --text-color:          hsl(228, 0%, 100%);
+  --text-color-light:    hsl(228, 50%, 70%);
+  --focus-color:         hsl(57, 100%, 58%);
 }
 
-.light-theme {
+html.theme--light {
   --accent-one:       #ff2a6d;
+  --accent-one--pastel: #f6bacc;
   --accent-two:       #05d9e8;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
-  --background:          #fff;
+  --background:          hsl(30,90%,98%);
   --border:              hsl(228, 11%, 93%);
+  --background--light:   hsl(30,40%,94%);
   --background--dark:    hsl(228, 100%, 2%);
   --background--dark-on-color: hsl(228, 28%, 70%);
+  --link-color:          hsl(198, 100%, 30%);
   --text-color:         hsl(228, 100%, 2%);
+  --focus-color:         hsl(251, 100%, 58%);
 }
 
 .accent-one--fill {
@@ -71,16 +83,19 @@ $on-laptop:        900px !default;
   color: var(--accent-two);
 }
 
+*, *:after, *:before {
+  box-sizing: border-box;
+}
 
 // Use media queries like this:
-// @include media-query($on-palm) {
+// @include media-query($on-phone) {
 //   .wrapper {
 //     padding-right: $spacing-unit / 2;
 //     padding-left: $spacing-unit / 2;
 //   }
 // }
 @mixin media-query($device) {
-  @media screen and (max-width: $device) {
+  @media screen and (min-width: $device) {
     @content;
   }
 }
@@ -98,5 +113,6 @@ $on-laptop:        900px !default;
   "components/nav",
   "components/page",
   "components/post-list",
-  "components/syntax-highlighting"
+  "components/syntax-highlighting",
+  "components/theme-switcher"
 ;

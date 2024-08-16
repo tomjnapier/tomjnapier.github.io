@@ -4,7 +4,8 @@ title: Articles
 permalink: /blog/
 layout: blog
 order: 2
-list_title: Latest posts
+pagination: 
+  enabled: true
 ---
 
 Just a place for my thoughts on the work that I do, web development in general, and reviews of books, games, movies and anything else. 

@@ -3,7 +3,8 @@ layout: post
 title:  "Subnautica (and Below Zero) Review"
 date:   2023-06-25 10:02:09 +0100
 categories: reviews game-reviews
-cover-image: /assets/subnautica-concept-art.jpg
+cover-image: /assets/images/subnautica-concept-art.jpg
+published: false
 ---
 
 There's a concept in video game design called "game feel". It sounds a bit like "mouth-feel" which is gross, but nonetheless I've been thinking about it quite a bit recently.

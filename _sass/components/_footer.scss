@@ -1,15 +1,30 @@
 /**
  * Site footer
  */
+.divider {
+    height: 13rem;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+
+    svg {
+        height: auto;
+        width: 1600px;
+        margin-left: calc( (100vw - 1600px) / 2 );
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 .site-footer {
-    border-top: 2px solid var(--border);
-    background-color: var(--background--dark);
+    background-color: hsl(224 100% 10% / 1);
     padding: $spacing-unit*2 0 0;
 }
 
 .footer-heading {
     @include relative-font-size(1.125);
     margin-bottom: calc( #{$spacing-unit} / 2);
+    color: white;
 }
 
 .contact-list,
@@ -37,46 +52,60 @@
     @include relative-font-size(0.9375);
     color: var(--background--dark-on-color);
     margin-left: calc( -#{$spacing-unit} / 2);
-    display: flex;
+
 }
+
+@include media-query($on-tablet) {
+
+    .footer-col-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
 
 .footer-col {
     margin-bottom:calc( #{$spacing-unit} / 2);
     padding-left:calc( #{$spacing-unit} / 2);
 }
 
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
+.footer-col-1,
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
 }
 
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
+.footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
 }
 
-@include media-query($on-palm) {
+@include media-query($on-tablet) {
+
     .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+        float: left;
     }
+
+    .footer-col-1 {
+        width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+        width:         calc(35% - (#{$spacing-unit} / 2));
+    }
+    
+    .footer-col-2 {
+        width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+        width:         calc(20% - (#{$spacing-unit} / 2));
+    }
+    
+    .footer-col-3 {
+        width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+        width:         calc(45% - (#{$spacing-unit} / 2));
+    }
+
 }

@@ -4,8 +4,8 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      <svg role="img" aria-hidden="true" viewbox="0 0 1000 800" width="1000" height="800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" aria-label="Go to the homepage">
+      <svg role="img" focusable="false" aria-hidden="true" viewbox="0 0 1000 800" width="1000" height="800" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="none" d="M0 0h1000v800H0z"/>
         <circle cx="117.188" cy="145.188" r="117.188" class="accent-one--fill"/>
         <circle cx="372.396" cy="145.188" r="117.188" class="accent-one--fill"/>
@@ -20,13 +20,11 @@
         <circle cx="882.812" cy="655.604" r="117.188" class="accent-two--fill"/>
         <circle cx="627.604" cy="655.604" r="117.188" class="accent-two--fill"/>
       </svg>
-      <span class="visually-hidden">{{ site.title | escape }}</span>
     </a>
 
     {%- if page_paths -%}
-      <nav class="site-nav">
-       
-
+      <nav class="site-nav" aria-labelledby="navigation-menu-heading">
+        <h2 id="navigation-menu-heading" class="visually-hidden">Main navigation</h2>
         <ul class="site-nav__links">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
@@ -41,7 +39,8 @@
             </li>
             {%- endif -%}
           {%- endfor -%}
-        </div>
+          {% include theme-switcher.html %}
+        </ul>
       </nav>
     {%- endif -%}
   </div>

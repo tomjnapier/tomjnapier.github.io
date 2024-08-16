@@ -4,7 +4,7 @@
     line-height: 1;
     font-family: $header-font-family;
   
-    @include media-query($on-laptop) {
+    @include media-query($on-tablet) {
       @include relative-font-size(2.25);
     }
   }
@@ -23,17 +23,17 @@
   
 .page__title {
     
-    @include relative-font-size(4);
+    @include relative-font-size(2.25);
     
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 0.8;
     font-family: $header-font-family;
   
     @include media-query($on-laptop) {
-      @include relative-font-size(2.25);
+      @include relative-font-size(4);
     }
 
-    font-weight: 600;
+    font-weight: 700;
 }
   
 .post-list-heading {
@@ -59,4 +59,11 @@
 .post-link {
     @include relative-font-size(1.5);
     display: block;
+}
+
+@include media-query($on-laptop) {
+    .page__title {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
 }

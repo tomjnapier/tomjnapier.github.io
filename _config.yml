@@ -23,7 +23,7 @@ email: tomjnapier@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi there, I’m Tom. I’m a web developer and accessibilty specialist. I’m currently working for the civil service in the UK.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tomjnapier
 github_username:  tomjnapier
 
@@ -31,6 +31,8 @@ github_username:  tomjnapier
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+gems: [jekyll-paginate-v2]
 
 header_pages:
   - _pages/blog.markdown
@@ -42,7 +44,6 @@ footer_pages:
   - _pages/accessibility-statement.markdown
 
 include: ['_pages']
-
 show_excerpts: true
 
 # Exclude from processing.

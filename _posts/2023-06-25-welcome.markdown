@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2023-06-25 01:13:09 +0100
+categories: updates
+---
+I like writing. I often think that I don't do it very much, but as with most jobs that aren't manual or vocational now, I spend a large part of my day writing emails. I try hard to write clearly and craft my email communications so they're clear for my colleagues; it is pretty draining though.
+
+For a while now I've been wanting to write for enjoyment, not for work. I've never really had enough self-discipline to properly commit to writing something substantial. I'd love to write a novel someday, but I'm under no illusions as to how much time, effort, persistance and skill is required to do that.
+
+So instead, I'll settle for a blog! 
+
+I might write a bit more about work and technical stuff at some point, but at least for now, I want to keep these articles from being completely dull. So I'll kick off with some reviews of stuff that I've enjoyed recently.

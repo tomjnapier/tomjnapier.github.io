@@ -1,26 +1,30 @@
 .site-nav {
 
-    float: right;
-    line-height: $base-line-height * $base-font-size * 2.25;
+    line-height: 1;
   
     &__links {
       list-style-type: none;
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
       margin: 0;
     }
   
     &__link-item {
-      display: inline-block;
+      display: block;
+      margin: 0 0.5rem;
     }
   
     &__link {
+
         color: var(--text-color);
         line-height: $base-line-height;
-        padding: 0.5rem;
+        padding: 0.2rem 0.5rem 0.5rem;
         font-weight: 600;
         font-family: $header-font-family;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        border-radius: 6px;
 
         &, &:visited {
             color: var(--text-color);
@@ -32,14 +36,57 @@
         }
 
     }
+
+    &__control {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        justify-content: center;
+    }
   
 }
 
+@include media-query( $on-phone ) {
+
+    .site-nav {
+            
+        &__link {
+            font-size: 1.5rem;
+        }
+
+        &__control {
+            width: auto !important;
+            margin-top: 0rem;
+        }
+        
+    }
+
+}
+
+@include media-query( $on-tablet ) {
+
+    .site-nav {
+      
+        &__links {
+          list-style-type: none;
+          display: flex;
+          justify-content: space-between;
+          margin: 0;
+        }
+            
+        &__link {
+            font-size: 1.75rem;
+        }
+    }
+
+}
+
 .bypass-link {
-    background-color: var(--accent-two);
+    background-color: var(--focus-color);
     color: var(--accent-two-on-color);
-    font-weight: bold;
+    font-weight: 500;
     padding: 0.5rem;
+    padding-left: 1rem;
   
     position: absolute !important;
     width: 1px !important;
@@ -53,8 +100,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-decoration: underline;
-    display: inline-block;
-  
+    text-align: left;
+    font-size: 1rem;
+    
+    &:visited {
+        color: var(--accent-two-on-color);
+    }
+
     &:focus {
         position: static !important;
         width: 100% !important;
@@ -65,7 +117,13 @@
         -webkit-clip-path: none !important;
         clip-path: none !important;
         white-space: inherit !important;
-        text-align: center;
+        outline: 0px;
+
+
+        .theme--light & {
+            color: var(--background);
+        }
+    
     }
   
-  }
+}

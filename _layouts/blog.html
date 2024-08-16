@@ -8,14 +8,15 @@ layout: default
     <h1 class="page__title">{{ page.title }}</h1>
   </div>
   {%- endif -%}
+  <div class="page__content">
+    {{ content }}
+  </div>
 
-  {{ content }}
   {%- if site.posts.size > 0 -%}
     <section class="post-list">
-      <h2 class="post-list__heading">{{ page.list_title | default: "Posts" }}</h2>
       <ul class="post-list__items">
         {%- for post in site.posts -%}
-        <li class="post-list__item post">
+        <li class="post-list__item post post--card">
           <a class="post__link" href="{{ post.url | relative_url }}">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <div class="post__meta">
@@ -28,9 +29,9 @@ layout: default
               {%- endif -%}
               <div class="post__date">{{ post.date | date: date_format }}</div>
             </div>
-            <h3 class="post__title">
+            <h2 class="post__title">
               {{ post.title | escape }}
-            </h3>
+            </h2>
             {%- if post.custom-excerpt != '' -%}
               <div class="post__teaser">
                 {{ post.custom-excerpt }}
@@ -42,5 +43,18 @@ layout: default
       </ul>
     </section>
   {%- endif -%}
-
+  {% if paginator.total_pages > 1 %}
+  <ul>
+    {% if paginator.previous_page %}
+    <li>
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li>
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+    </li>
+    {% endif %}
+  </ul>
+  {% endif %}
 </div>

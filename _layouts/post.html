@@ -3,8 +3,13 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   {%- if page.cover-image -%}
-    <img class="post__cover" src="{{ page.cover-image }}"/>
-  {%- endif -%}
+  <figure>
+    <img class="post__cover" src="{{ page.cover-image }}" alt="{{ page.cover-alt }}"/>
+    <figcaption>
+      {{ page.cover-caption }}
+    </figcaption>
+  </figure>
+    {%- endif -%}
   <header class="post__header">
     <h1 class="post__title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post__meta">
