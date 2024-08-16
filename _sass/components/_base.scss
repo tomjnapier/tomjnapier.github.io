@@ -14,7 +14,10 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-size: $small-font-size;
+  line-height: $base-line-height;
   color: var(--text-color);
   background-color: var(--background);
   -webkit-text-size-adjust: 100%;
@@ -29,8 +32,17 @@ body {
   overflow-x: hidden;
 }
 
+@include media-query($on-tablet) {
+  body {
+    font-size: $base-font-size;
+  }
+}
+
 button {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 .visually-hidden {

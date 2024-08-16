@@ -40,7 +40,6 @@
     &__links {
         list-style-type: none;
         margin: 0;
-        display: flex;
     }
 
     &__link {
@@ -69,7 +68,13 @@
 
 }
 
-@include media-query($on-tablet) {
+@include media-query($on-phone) {
+
+    .footer-nav {
+        &__links {
+            display: flex;
+        }
+    }
 
     .footer-col-wrapper {
         display: flex;
