@@ -17,7 +17,7 @@ I run and maintain this site by myself. I want as many people as possible to be 
 
 ## How accessible this website is
 
-I may occasionally embed YouTube videos or other media in a blog post. The embedded YouTube player has issues with some speech recognition software and screen-readers, [list examples]
+I may occasionally embed YouTube videos in a blog post. Suggested/related videos that are highlighted after the video may not be accessible.
 
 ## Reporting accessibility problems with this website
 
@@ -29,6 +29,6 @@ This website conforms with the [Web Content Accessibility Guidelines version 2.2
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 28/08/2023. It was last reviewed on [date when it was last reviewed].
+This statement was prepared on 28/08/2023. It was last reviewed on 17/08/2024.
 
-This website was last tested on [date]. I tested every page, using automated tools, assistive software, and manual checks.
+This website was last tested on 17/08/2024. I tested every page, using automated tools, assistive software, and manual checks.
