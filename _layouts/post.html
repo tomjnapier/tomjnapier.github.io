@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post post--single h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   {%- if page.cover-image -%}
   <figure>
     <img class="post__cover" src="{{ page.cover-image }}" alt="{{ page.cover-alt }}"/>
@@ -12,7 +12,7 @@ layout: default
     {%- endif -%}
   <header class="post__header">
     <h1 class="post__title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post__meta">
+    <p class="post__meta post__meta--top">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
@@ -25,6 +25,19 @@ layout: default
   <div class="post__content e-content" itemprop="articleBody">
     {{ content }}
   </div>
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  <footer class="post__meta">
+    <h2>Post details</h2>
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+    {%- if page.categories -%}
+      <div class="post__categories">
+        <h3>Categorised in</h3>
+        {%- for category in page.categories -%}
+          <a class="post__meta-item" href="/{{category}}">{{category | capitalize}}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    <h3>Published on</h3>
+    <p class="post__date post__meta-item">{{ page.date | date: date_format }}</p>
+    </footer>
+    <a class="post__back-link" href="/articles">Back to articles</a>
 </article>

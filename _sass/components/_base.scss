@@ -164,27 +164,28 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: 2px underline;
+  text-underline-offset: 4px;
+  transition: text-decoration 0.2s ease-in-out;
 
   &:visited {
     color: var(--link-color);
   }
 
-  &:hover {
-    color: var(--link-color-hover);
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
+  &:hover,
+  &:focus {
+    color: var(--link-color);
+    text-decoration: 4px underline;
     text-underline-offset: 4px;
   }
 
   &.action {
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
 
     &:hover,
     &:focus {
-      text-decoration: none;
       transition: all 0.2s ease-in-out;
 
       svg {
@@ -201,8 +202,6 @@ a {
   }
 
   .social-media-list &:hover {
-    text-decoration: none;
-
     .username {
       text-decoration: underline;
     }
@@ -330,7 +329,7 @@ pre {
     display: flex;
     align-items: center;
 
-    &, &:visited {
+    &, &:hover, &:visited {
       color: var(--footer-link-color);
     }
 

@@ -46,6 +46,18 @@ footer_pages:
   - _pages/sitemap.markdown
 permalink: /:categories/:year/:month/:day/:title
 
+collections:
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+
 include: ['_pages']
 show_excerpts: true
 

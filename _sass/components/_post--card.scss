@@ -1,0 +1,48 @@
+.post--card {
+    background-color: var(--background--light);
+    margin-bottom: 2rem;
+    border-radius: var(--radius--large);
+
+    .post__title {
+        font-size: 2rem;
+        letter-spacing: 0;
+        color: var(--text-color);
+        font-weight: 700;
+    }
+
+    .post__link {
+        text-decoration: none;
+    }
+
+    .post__link:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+    }
+    
+    .post__link:focus {
+        outline: 0;
+    }
+    
+    .post__link:focus:before {
+        border-radius: var(--radius--large);
+        outline: 2px solid var(--focus-color);
+    }
+
+    .post__meta {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 2rem 1rem;
+        color: var(--text-color-light);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+    }
+    
+
+}

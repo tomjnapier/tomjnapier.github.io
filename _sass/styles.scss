@@ -35,8 +35,9 @@ html {
 }
 
 html.theme--dark {
-  --accent-one:       #ff2a6d;
-  --accent-two:       #05d9e8;
+  --accent-one:         #ff2a6d;
+  --accent-two:         #05d9e8;
+  --accent-three:       #ffcc66;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
   --background:          #050a18;
@@ -56,6 +57,7 @@ html.theme--light {
   --accent-one:       #ff2a6d;
   --accent-one--pastel: #f6bacc;
   --accent-two:       #05d9e8;
+  --accent-three:        #b84000;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
   --background:          hsl(30,95%,98%);
@@ -115,6 +117,8 @@ html.theme--light {
   "components/nav",
   "components/page",
   "components/post-list",
+  "components/post--card",
+  "components/post--single",
   "components/syntax-highlighting",
   "components/theme-switcher"
 ;

@@ -18,7 +18,7 @@
   
     &__link {
 
-        color: var(--text-color);
+        color: var(--accent-three);
         line-height: $base-line-height;
         padding: 0.2rem 0.5rem 0.5rem;
         font-weight: 600;
@@ -27,7 +27,7 @@
         border-radius: 6px;
 
         &, &:visited {
-            color: var(--text-color);
+            color: var(--accent-three);
         }
 
         // Gaps between nav items, but not on the last one
