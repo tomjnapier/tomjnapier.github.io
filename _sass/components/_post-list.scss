@@ -12,6 +12,7 @@
 .post-list__item {
     width: 100%;
     max-width: 100%;
+    position: relative;
 }
 
 .post--card {
@@ -37,7 +38,7 @@
 
 .post__link {
 
-    padding: 2rem;
+    padding: 0 2rem 2rem;
     display: block;
     border-radius: var(--radius--large);
 
@@ -48,9 +49,29 @@
 
 }
 
+.post__link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+}
+
+.post__link:focus {
+    outline: 0;
+}
+
+.post__link:focus:before {
+    border-radius: var(--radius--large);
+    outline: 2px solid var(--focus-color);
+}
+
 .post__meta {
     display: flex;
     justify-content: space-between;
+    padding: 2rem 2rem 1rem;
 }
 
 .post__meta {

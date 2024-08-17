@@ -17,25 +17,21 @@ layout: default
       <ul class="post-list__items">
         {%- for post in site.posts -%}
         <li class="post-list__item post post--card">
-          <a class="post__link" href="{{ post.url | relative_url }}">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <div class="post__meta">
-              {%- if post.categories -%}
-                <div class="post__categories">
-                  {%- for category in post.categories -%}
-                    <span>{{category}}</span>
-                  {%- endfor -%}
-                </div>
-              {%- endif -%}
-              <div class="post__date">{{ post.date | date: date_format }}</div>
-            </div>
-            <h2 class="post__title">
-              {{ post.title | escape }}
-            </h2>
-            {%- if post.custom-excerpt != '' -%}
-              <div class="post__teaser">
-                {{ post.custom-excerpt }}
+          <div class="post__meta">
+            {%- if post.categories -%}
+              <div class="post__categories">
+                {%- for category in post.categories -%}
+                  <span>{{category}}</span>
+                {%- endfor -%}
               </div>
+            {%- endif -%}
+            <div class="post__date">{{ post.date | date: date_format }}</div>
+          </div>
+          <a class="post__link" aria-labelledby="post-{{post.id}}" href="{{ post.url | relative_url }}">
+            <h2 class="post__title" id="post-{{post.id}}">{{ post.title | escape }}</h2>
+            {%- if post.custom-excerpt != '' -%}
+              <p class="post__teaser" id="post-teaser-{{post.id}}">{{ post.custom-excerpt }}</p>
             {%- endif -%}
           </a>
         </li>
