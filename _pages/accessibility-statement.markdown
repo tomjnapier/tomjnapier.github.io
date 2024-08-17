@@ -32,3 +32,5 @@ This website conforms with the [Web Content Accessibility Guidelines version 2.2
 This statement was prepared on 28/08/2023. It was last reviewed on 17/08/2024.
 
 This website was last tested on 17/08/2024. I tested every page, using automated tools, assistive software, and manual checks.
+
+You can read the [full accessibility test report](/assets/files/tom-j-napier-blog-accessibility-audit-report.html) as a html download.
