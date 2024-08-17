@@ -23,7 +23,7 @@ email: tomjnapier@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi there, I’m Tom. I’m a web developer and accessibilty specialist. I’m currently working for the civil service in the UK.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tomjnapier.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tomjnapier.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tomjnapier
 github_username:  tomjnapier
 
