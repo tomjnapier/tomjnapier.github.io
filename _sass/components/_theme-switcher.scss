@@ -1,7 +1,12 @@
 .site-nav__control {
     width: 100%;
     position: relative;
-    margin-left: 1rem;
+}
+
+@include media-query($on-phone) {
+    .site-nav__control {
+        margin-left: 1rem;
+    }
 }
 
 .site-theme-switcher__options {
@@ -9,12 +14,16 @@
     position: absolute;
     top: calc( 100% + 0.5rem );
     width: 100%;
-    background: rgb( 255 255 255 / 5%);
+    background: hsl(227, 33%, 11%);
     border-radius: 5px;
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 2px 5px 10px rgb( 0 0 0 / 4%);
 
+
+    .theme--light & {
+        background: hsl(27, 100%, 98%);
+    }
     &--active {
         display: block;
         list-style-type: none;
