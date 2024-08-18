@@ -99,12 +99,15 @@
     white-space: nowrap !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-decoration: underline;
+    text-decoration: underline !important;
     text-align: left;
     font-size: 1rem;
 
     .theme--light & {
         color: var(--background);
+        &:visited {
+            color: var(--background);
+        }
     }
 
     &:visited {
