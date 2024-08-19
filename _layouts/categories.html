@@ -15,25 +15,31 @@ layout: default
       <section class="post-list">
         <ul class="post-list__items">
           {%- for post in site.posts -%}
-          <li class="post-list__item post post--card">
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <div class="post__meta">
-              {%- if post.categories -%}
-                <div class="post__categories">
-                  {%- for category in post.categories -%}
-                    <span>{{category}}</span>
-                  {%- endfor -%}
-                </div>
-              {%- endif -%}
-              <div class="post__date">{{ post.date | date: date_format }}</div>
-            </div>
-            <a class="post__link" aria-labelledby="post-{{post.id}}" href="{{ post.url | relative_url }}">
-              <h2 class="post__title" id="post-{{post.id}}">{{ post.title | escape }}</h2>
-              {%- if post.custom-excerpt != '' -%}
-                <p class="post__teaser" id="post-teaser-{{post.id}}">{{ post.custom-excerpt }}</p>
-              {%- endif -%}
-            </a>
-          </li>
+            {%- if post.categories -%}
+              {%- for cat in post.categories -%}
+                {%- if cat == page.category -%}
+                  <li class="post-list__item post post--card">
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    <div class="post__meta">
+                      {%- if post.categories -%}
+                        <div class="post__categories">
+                          {%- for category in post.categories -%}
+                            <span>{{category}}</span>
+                          {%- endfor -%}
+                        </div>
+                      {%- endif -%}
+                      <div class="post__date">{{ post.date | date: date_format }}</div>
+                    </div>
+                    <a class="post__link no-background-focus" aria-labelledby="post-{{post.id}}" href="{{ post.url | relative_url }}">
+                      <h2 class="post__title" id="post-{{post.id}}">{{ post.title | escape }}</h2>
+                      {%- if post.custom-excerpt != '' -%}
+                        <p class="post__teaser" id="post-teaser-{{post.id}}">{{ post.custom-excerpt }}</p>
+                      {%- endif -%}
+                    </a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
           {%- endfor -%}
         </ul>
       </section>

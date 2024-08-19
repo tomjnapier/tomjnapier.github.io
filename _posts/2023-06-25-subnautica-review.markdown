@@ -2,7 +2,7 @@
 layout: post
 title:  "Subnautica (and Below Zero) Review"
 date:   2023-06-25 10:02:09 +0100
-categories: reviews game-reviews
+categories: reviews
 cover-image: /assets/images/subnautica-concept-art.jpg
 published: false
 ---
