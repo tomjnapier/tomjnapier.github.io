@@ -18,16 +18,17 @@
   
     &__link {
 
-        color: var(--accent-three);
+        color: var(--link-color);
         line-height: $base-line-height;
         padding: 0.2rem 0.5rem 0.5rem;
         font-weight: 600;
         font-family: $header-font-family;
         font-size: 1.25rem;
         border-radius: 6px;
+        display: block;
 
         &, &:visited {
-            color: var(--accent-three);
+            color: var(--link-color);
         }
 
         // Gaps between nav items, but not on the last one
@@ -75,7 +76,7 @@
         }
             
         &__link {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
     }
 

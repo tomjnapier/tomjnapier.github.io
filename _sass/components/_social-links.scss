@@ -1,0 +1,29 @@
+.social-media-list a:hover {
+    .username {
+        text-decoration: underline;
+    }
+}
+
+.social-media-list {
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+
+        &, &:hover, &:visited {
+            color: var(--footer-link-color);
+        }
+
+        &:focus {
+            .svg-icon {
+                fill: var(--focus-on-color);
+            }
+        }
+
+    }
+
+    li + li {
+        padding-top: 5px;
+    }
+}
+  

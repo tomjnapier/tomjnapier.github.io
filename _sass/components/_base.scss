@@ -8,8 +8,6 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
@@ -68,8 +66,6 @@ ul, ol, dl, figure,
 %vertical-rhythm {
   margin-bottom: calc($spacing-unit / 2);
 }
-
-
 
 /**
  * `main` element
@@ -156,7 +152,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :focus {
-  outline: 2px solid var(--focus-color);
+  outline: 4px solid var(--focus-color);
+  outline-offset: 0px;
 }
 
 /**
@@ -165,8 +162,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: var(--link-color);
   text-decoration: 2px underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 2px;
   transition: text-decoration 0.2s ease-in-out;
+  border-radius: 1px;
 
   &:visited {
     color: var(--link-color);
@@ -176,7 +174,14 @@ a {
   &:focus {
     color: var(--link-color);
     text-decoration: 4px underline;
-    text-underline-offset: 4px;
+    text-underline-offset: 2px;
+  }
+
+  &:not(.no-background-focus) {
+    &:focus, &:focus:visited {
+      background-color: var(--focus-color);
+      color: var(--focus-on-color);
+    }
   }
 
   &.action {
@@ -194,6 +199,12 @@ a {
       }
     }
 
+    &:focus {
+        svg {
+            fill: var(--focus-on-color);
+        }
+    }
+
     svg {
       fill: var(--link-color);
       padding-left: 0.5rem;
@@ -201,16 +212,10 @@ a {
 
   }
 
-  .social-media-list &:hover {
-    .username {
-      text-decoration: underline;
-    }
-  }
-
   .page__content & {
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+    text-underline-offset: 2px;
     transition: text-decoration-thickness 0.2s ease-in-out;
 
     &:hover,
@@ -300,17 +305,6 @@ pre {
 }
 
 /**
- * Clearfix
- */
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-
-/**
  * Icons
  */
 
@@ -322,25 +316,6 @@ pre {
     vertical-align: text-top;
     margin-right: 0.5rem;
 }
-
-.social-media-list {
-
-  &__link {
-    display: flex;
-    align-items: center;
-
-    &, &:hover, &:visited {
-      color: var(--footer-link-color);
-    }
-
-  }
-
-  li + li {
-    padding-top: 5px;
-  }
-}
-
-
 
 /**
  * Tables

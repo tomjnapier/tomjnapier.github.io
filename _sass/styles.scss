@@ -43,32 +43,34 @@ html.theme--dark {
   --background:          #050a18;
   --border:              #1d2230;
   --background--light:   hsl(228, 50%, 15%);
-  --background--dark:    hsl(228, 100%, 2%);
+  --background--dark:    hsl(224, 100%, 8%);
   --background--dark-on-color: hsl(228, 28%, 70%);
   --link-color:          hsl(184, 100%, 56%);
   --footer-link-color:   hsl(184, 100%, 56%);
   --link-color-hover:    hsl(198, 100%, 47%);
   --text-color:          hsl(228, 0%, 100%);
   --text-color-light:    hsl(228, 50%, 70%);
-  --focus-color:         hsl(57, 100%, 58%);
+  --focus-color:         hsl(251, 100%, 60%);
+  --focus-on-color:      hsl(30,95%,98%);
 }
 
 html.theme--light {
-  --accent-one:       #ff2a6d;
-  --accent-one--pastel: #f6bacc;
-  --accent-two:       #05d9e8;
+  --accent-one:          #ff2a6d;
+  --accent-one--pastel:  #f6bacc;
+  --accent-two:          #05d9e8;
   --accent-three:        #b84000;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
   --background:          hsl(30,95%,98%);
   --border:              hsl(228, 11%, 93%);
   --background--light:   hsl(30,40%,94%);
-  --background--dark:    hsl(228, 100%, 2%);
+  --background--dark:    hsl(224, 100%, 8%);
   --background--dark-on-color: hsl(228, 28%, 70%);
-  --link-color:          hsl(198, 100%, 30%);
+  --link-color:          hsl(251, 100%, 60%);
   --footer-link-color:   hsl(184, 100%, 56%);
-  --text-color:         hsl(228, 100%, 2%);
-  --focus-color:         hsl(251, 100%, 58%);
+  --text-color:          hsl(228, 100%, 2%);
+  --focus-color:         hsl(251, 100%, 60%);
+  --focus-on-color:        var(--background);
 }
 
 .accent-one--fill {
@@ -119,6 +121,7 @@ html.theme--light {
   "components/post-list",
   "components/post--card",
   "components/post--single",
+  "components/social-links",
   "components/syntax-highlighting",
   "components/theme-switcher"
 ;

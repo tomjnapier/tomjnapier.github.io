@@ -17,7 +17,7 @@
 }
 
 .site-footer {
-    background-color: hsl(224 100% 10% / 1);
+    background-color: var(--background--dark);
     padding: $spacing-unit*2 0 0;
 }
 
@@ -44,6 +44,7 @@
 
     &__link {
         font-size: 1rem;
+        padding: .125rem 0;
         color: var(--footer-link-color);
 
         &:hover {

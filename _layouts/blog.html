@@ -28,7 +28,7 @@ layout: default
             {%- endif -%}
             <div class="post__date">{{ post.date | date: date_format }}</div>
           </div>
-          <a class="post__link" aria-labelledby="post-{{post.id}}" href="{{ post.url | relative_url }}">
+          <a class="post__link no-background-focus" aria-labelledby="post-{{post.id}}" href="{{ post.url | relative_url }}">
             <h2 class="post__title" id="post-{{post.id}}">{{ post.title | escape }}</h2>
             {%- if post.custom-excerpt != '' -%}
               <p class="post__teaser" id="post-teaser-{{post.id}}">{{ post.custom-excerpt }}</p>
