@@ -1,3 +1,4 @@
 ---
 permalink: "/updates"
+layout: "categories"
 ---

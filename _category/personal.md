@@ -1,3 +1,4 @@
 ---
 permalink: "/personal"
+layout: "categories"
 ---
