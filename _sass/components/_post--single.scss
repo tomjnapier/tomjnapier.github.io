@@ -3,7 +3,7 @@
     .post__content,
     .post__meta:not(.post__meta--top) {
         padding-bottom: 0rem;
-        border-bottom: 4px dotted;
+        border-bottom: 0.25rem dotted;
         margin-bottom: 2rem;
     }
 
@@ -16,7 +16,7 @@
             margin-top: 1rem;
             color: var(--text-color-light);
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: $base-bold-weight;
             font-size: 1rem;
             letter-spacing: 0.1rem;    
         }
@@ -29,7 +29,7 @@
 
     .post__meta--top {
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: $base-bold-weight;
         font-size: 1rem;
         letter-spacing: 0.1rem;
     }

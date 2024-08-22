@@ -7,7 +7,7 @@
         font-size: 2rem;
         letter-spacing: 0;
         color: var(--text-color);
-        font-weight: 700;
+        font-weight: $base-bold-weight;
     }
 
     .post__link {
@@ -30,7 +30,7 @@
     
     .post__link:focus:before {
         border-radius: var(--radius--large);
-        outline: 2px solid var(--focus-color);
+        outline: 0.25rem solid var(--focus-color);
     }
 
     .post__meta {
@@ -39,7 +39,7 @@
         padding: 2rem 2rem 1rem;
         color: var(--text-color-light);
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: $base-bold-weight;
         font-size: 1rem;
         letter-spacing: 0.1rem;
     }

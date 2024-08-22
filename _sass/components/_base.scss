@@ -86,7 +86,7 @@ img {
     border-radius: 50%;
     width: 12rem;
     height: 12rem;
-    border: 6px solid var(--accent-one);
+    border: var(--radius) solid var(--accent-one);
     text-align: center;
     margin: 2rem 0;
 
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :focus {
-  outline: 4px solid var(--focus-color);
+  outline: 0.25rem solid var(--focus-color);
   outline-offset: 0px;
 }
 
@@ -161,8 +161,8 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: var(--link-color);
-  text-decoration: 2px underline;
-  text-underline-offset: 2px;
+  text-decoration: 0.125rem underline;
+  text-underline-offset: 0.125rem;
   transition: text-decoration 0.2s ease-in-out;
   border-radius: 1px;
 
@@ -173,8 +173,8 @@ a {
   &:hover,
   &:focus {
     color: var(--link-color);
-    text-decoration: 4px underline;
-    text-underline-offset: 2px;
+    text-decoration: 0.25rem underline;
+    text-underline-offset: 0.125rem;
   }
 
   &:not(.no-background-focus) {
@@ -214,13 +214,13 @@ a {
 
   .page__content & {
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
+    text-decoration-thickness: 0.125rem;
+    text-underline-offset: 0.125rem;
     transition: text-decoration-thickness 0.2s ease-in-out;
 
     &:hover,
     &:focus {
-      text-decoration-thickness: 4px;
+      text-decoration-thickness: 0.25rem;
       transition: all 0.2s ease-in-out;
     }
 
@@ -234,7 +234,7 @@ a {
  */
 blockquote {
   color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  border-left: 0.25rem solid $grey-color-light;
   padding-left: calc($spacing-unit / 2);
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -254,16 +254,16 @@ pre,
 code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
-  border-radius: 3px;
+  border-radius: var(--radius);
   background-color: #eef;
 }
 
 code {
-  padding: 1px 5px;
+  padding: 0.125rem 0.25rem;
 }
 
 pre {
-  padding: 8px 12px;
+  padding: 0.5rem 10.125rem;
   overflow-x: auto;
 
   > code {
@@ -372,7 +372,7 @@ table {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-radius: 6px;
+    border-radius: var(--radius);
   }
 
 }

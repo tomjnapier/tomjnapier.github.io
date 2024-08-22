@@ -33,7 +33,7 @@
       @include relative-font-size(4);
     }
 
-    font-weight: 700;
+    font-weight: $base-bold-weight;
 }
   
 .post-list-heading {

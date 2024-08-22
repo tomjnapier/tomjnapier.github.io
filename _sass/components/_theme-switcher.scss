@@ -15,7 +15,7 @@
     top: calc( 100% + 0.5rem );
     width: 100%;
     background: hsl(227, 33%, 11%);
-    border-radius: 5px;
+    border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 2px 5px 10px rgb( 0 0 0 / 4%);

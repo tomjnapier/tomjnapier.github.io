@@ -24,7 +24,7 @@
         font-weight: 600;
         font-family: $header-font-family;
         font-size: 1.25rem;
-        border-radius: 6px;
+        border-radius: var(--radius);
         display: block;
 
         &, &:visited {
@@ -84,7 +84,6 @@
 
 .bypass-link {
     background-color: var(--focus-color);
-    color: var(--accent-two-on-color);
     font-weight: 500;
     padding: 0.5rem;
     padding-left: 1rem;
@@ -104,9 +103,9 @@
     text-align: left;
     font-size: 1rem;
 
-    &:focus,
+    &,
     &:visited {
-        color: var(--accent-two-on-color);
+        color: var(--focus-on-color);
     }
 
     &:focus {

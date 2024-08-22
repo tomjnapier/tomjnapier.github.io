@@ -29,7 +29,7 @@
   height: 40rem;
   object-fit: cover;
   margin-bottom: 0rem;
-  border-radius: 10px;
+  border-radius: var(--radius--large);
   // margin-left: calc((-100vw + 1200px) / 2);
   // margin-right: calc((-100vw + 1200px) / 2);
 }
