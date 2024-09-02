@@ -16,9 +16,11 @@
   margin-bottom: $spacing-unit;
 }
 
-.post__content p {
-
-  margin-bottom: 3rem;
+.post__content {
+  
+  p, ul, ol {
+    margin-bottom: 3rem;
+  }
 
 }
 
