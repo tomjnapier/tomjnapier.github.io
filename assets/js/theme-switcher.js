@@ -104,27 +104,44 @@ class ThemeSwitcher {
 
   }
 
-  changeTheme(theme = '') {
+  // Handle changing CSS classes to actually update the appearance
+  changeTheme( theme = '' ) {
 
     if ('' === theme)
       return;
 
-    const html = this.nodeList.rootElement
-      
+    const html    = this.nodeList.rootElement
+    const options = this.nodeList.options
+    let themeToSet
+
+    // Add current status to current theme in the menu
+    options.forEach( option => {
+      // remove all current statuses to start with
+      option.removeAttribute('aria-current')
+      // Find the button that matches the newly selected theme and set current status
+      if( option.dataset.theme === theme ) {
+        option.setAttribute('aria-current', true);
+      }
+    })
+
     // If the follow system theme option has been selected and media queries are supported
     if (theme === "system" && window.matchMedia) {
 
       if (window.matchMedia('(prefers-color-scheme: dark)').matches && (!localStorage.siteTheme || localStorage.siteTheme === "system")) {
-        theme = "dark";
+        themeToSet = "dark"
       }
       if (window.matchMedia('(prefers-color-scheme: light)').matches && (!localStorage.siteTheme || localStorage.siteTheme === "system")) {
-        theme = "light";
+        themeToSet = "light"
       }
 
+    } else {
+      themeToSet = theme
     }
 
-    html.classList.remove('theme--light', 'theme--dark');
-    html.classList.add('theme--' + theme);
+    // Adjust html classes to actually change the color scheme
+    html.classList.remove('theme--light', 'theme--dark')
+    html.classList.add( 'theme--' + themeToSet )
+
   }
 
 }
