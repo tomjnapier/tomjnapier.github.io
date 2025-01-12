@@ -24,6 +24,7 @@
     .theme--light & {
         background: hsl(27, 100%, 98%);
     }
+
     &--active {
         display: block;
         list-style-type: none;
@@ -50,9 +51,15 @@
         
         .theme--light & {
             color: var(--accent-two-on-color);
+            
             svg {
                 stroke: var(--accent-two-on-color);
             }
+            
+            // [aria-current="true"] {
+            //     fill: var(--accent-two-on-color);
+            // }
+        
         }
 
         &:hover,
@@ -64,10 +71,16 @@
             width: 1.25rem;
             height: 1.25rem;
             margin-right: 0.5rem;
-            stroke: rgb( 255 255 255 / 25%);
+            stroke: rgb(79 81 92);
             fill: none;
             stroke-width: 2px;
         }
+
+        // &[aria-current="true"] {
+        //     svg {
+        //         fill: rgb(79 81 92);
+        //     }
+        // }
 
     }
 
