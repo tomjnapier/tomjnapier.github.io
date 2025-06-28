@@ -32,6 +32,9 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+sass:
+  style: compressed
+
 host: localhost
 gems: [jekyll-paginate-v2]
 

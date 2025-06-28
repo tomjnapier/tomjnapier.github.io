@@ -28,12 +28,12 @@
     letter-spacing: -1px;
     line-height: 0.8;
     font-family: $header-font-family;
-  
+    font-weight: $base-bold-weight;
+    
     @include media-query($on-laptop) {
       @include relative-font-size(4);
     }
 
-    font-weight: $base-bold-weight;
 }
   
 .post-list-heading {

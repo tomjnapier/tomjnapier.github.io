@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@use "sass:color";
 // Define defaults for each variable.
 
 $base-font-family: 'Work Sans', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
@@ -15,8 +15,8 @@ $spacing-unit:     2rem !default;
 $brand-color:      #9e9efe !default;
 
 $grey-color:       #344a53 !default;
-$grey-color-light: lighten($grey-color, 60%) !default;
-$grey-color-dark:  darken($grey-color, 5%) !default;
+$grey-color-light: color.scale($grey-color, $lightness: 60%);
+$grey-color-dark: color.scale($grey-color, $lightness: -5%);
 
 $table-text-align: left !default;
 
@@ -32,6 +32,7 @@ $huge:             1920px !default;
 html {
   --radius: 0.375rem;
   --radius--large: 0.625rem;
+  --radius--xlarge: .875rem;
   --content-width: 62.5rem;
   --content-width--large: 75rem;
 }
@@ -51,6 +52,7 @@ html.theme--dark {
   --footer-link-color:   hsl(184, 100%, 56%);
   --link-color-hover:    hsl(198, 100%, 47%);
   --text-color:          hsl(228, 0%, 100%);
+  --text-color-grey:     hsl(228, 20%, 80%);
   --text-color-light:    hsl(228, 50%, 70%);
   --focus-color:         hsl(251, 100%, 60%);
   --focus-on-color:      hsl(30,95%,98%);
@@ -71,6 +73,7 @@ html.theme--light {
   --link-color:          hsl(251, 100%, 60%);
   --footer-link-color:   hsl(184, 100%, 56%);
   --text-color:          hsl(228, 100%, 2%);
+  --text-color-grey:     hsl(228, 20%, 40%);
   --focus-color:         hsl(251, 100%, 60%);
   --focus-on-color:        var(--background);
 }

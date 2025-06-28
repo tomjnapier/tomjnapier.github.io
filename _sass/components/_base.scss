@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /**
  * Reset some basic elements
  */
@@ -329,7 +331,7 @@ table {
   border: 1px solid $grey-color-light;
   tr {
     &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+      background-color: color.scale($grey-color-light, $lightness: -17%);
     }
   }
   th, td {
@@ -339,9 +341,9 @@ table {
     padding-right: calc($spacing-unit / 2);
   }
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    background-color: color.scale($grey-color-light, $lightness: 10.2%);
+    border: 1px solid color.scale($grey-color-light, $lightness: -17%);
+    border-bottom-color: color.scale($grey-color-light, $lightness: -17%);
   }
   td {
     border: 1px solid $grey-color-light;
