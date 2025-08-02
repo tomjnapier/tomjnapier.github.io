@@ -38,6 +38,24 @@ body {
   }
 }
 
+@include media-query($on-laptop) {
+  body {
+    font-size: $base-font-size*1.125;
+  }
+}
+
+@include media-query($on-desktop) {
+  body {
+    font-size: $base-font-size*1.25;
+  }
+}
+
+@include media-query($huge) {
+  body {
+    font-size: $base-font-size*1.5;
+  }
+}
+
 button {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
@@ -282,10 +300,17 @@ pre {
  */
 .wrapper {
 
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-  padding-right: calc( #{$spacing-unit});
-  padding-left: calc( #{$spacing-unit});
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 0.75));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 0.75));
+  padding-right: calc( #{$spacing-unit} * .75);
+  padding-left: calc( #{$spacing-unit} * .75);
+
+  @include media-query($on-phone) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} ));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} ));
+    padding-right: calc( $spacing-unit );
+    padding-left: calc( $spacing-unit );
+  }
 
   @include media-query($on-tablet) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));

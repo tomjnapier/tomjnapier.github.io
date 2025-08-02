@@ -4,7 +4,7 @@
     border-radius: var(--radius--large);
 
     .post__title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         letter-spacing: 0;
         color: var(--text-color);
         font-weight: $base-bold-weight;
@@ -12,6 +12,7 @@
 
     .post__link {
         text-decoration: none;
+        padding: 0 1.5rem 1.5rem;
     }
 
     .post__link:before {
@@ -36,13 +37,42 @@
     .post__meta {
         display: flex;
         justify-content: space-between;
-        padding: 2rem 2rem 1rem;
+        padding: 1.5rem 1.5rem 1rem;
         color: var(--text-color-light);
         text-transform: uppercase;
         font-weight: $base-bold-weight;
-        font-size: 1rem;
+        font-size: .875rem;
         letter-spacing: 0.1rem;
     }
     
+}
+
+@include media-query( $on-phone ) {
+
+    .post--card {
+
+        .post__title {
+            font-size: 2rem;
+        }
+
+        .post__meta {
+            padding: 2rem 2rem 1rem;
+        }
+
+        .post__link {
+            padding: 0 2rem 2rem;
+        }
+
+    }
+
+}
+
+@include media-query( $on-tablet ) {
+
+    .post--card {
+        .post__meta {
+            font-size: 1rem;
+        }
+    }
 
 }
