@@ -10,6 +10,10 @@
         font-weight: $base-bold-weight;
     }
 
+    .post__teaser {
+        color: var(--text-color-light);
+    }
+
     .post__link {
         text-decoration: none;
         padding: 0 1.5rem 1.5rem;
@@ -34,17 +38,35 @@
         outline: 0.25rem solid var(--focus-color);
     }
 
+    .post__link:hover:before {
+        border-radius: var(--radius--large);
+        outline: 0.125rem solid var(--focus-color);
+    }
+
     .post__meta {
         display: flex;
         justify-content: space-between;
         padding: 1.5rem 1.5rem 1rem;
-        color: var(--text-color-light);
-        text-transform: uppercase;
-        font-weight: $base-bold-weight;
+        color: var(--accent-two);
+        text-transform: capitalize;
+        font-weight: $base-medium-weight;
         font-size: .875rem;
-        letter-spacing: 0.1rem;
     }
     
+}
+
+.theme--light {
+    .post--card {
+        .post__title {
+            color:var(--link-color);
+        }
+        .post__meta {
+            color: var(--text-color-dark-grey);
+        }
+        .post__teaser {
+            color: var(--text-color-grey);
+        }
+    }
 }
 
 @include media-query( $on-phone ) {
