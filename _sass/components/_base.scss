@@ -271,11 +271,10 @@ blockquote {
  * Code formatting
  */
 pre,
-code {
+code,
+.highlight {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
   border-radius: var(--radius);
-  background-color: #eef;
 }
 
 code {
@@ -283,7 +282,8 @@ code {
 }
 
 pre {
-  padding: 0.5rem 10.125rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 0;
   overflow-x: auto;
 
   > code {

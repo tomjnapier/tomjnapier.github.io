@@ -13,6 +13,12 @@
         margin-left: calc( (100vw - 1600px) / 2 );
         position: absolute;
         bottom: 0;
+        color: var(--background--dark);
+
+        path:last-of-type {
+            fill: currentColor;
+        }
+
     }
 
 }

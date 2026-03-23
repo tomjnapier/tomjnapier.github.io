@@ -1,0 +1,40 @@
+$base-font-size: 1rem;
+$scale: 1.25;
+
+$type-scale: (
+  "sm":   -1,
+  "base":  0,
+  "md":    1,
+  "lg":    2,
+  "xl":    3,
+  "2xl":   4,
+  "3xl":   5,
+  "4xl":   6,
+  "5xl":   7
+);
+
+@function type-scale($step) {
+  @return $base-font-size * pow($scale, $step);
+}
+
+:root {
+  @each $name, $step in $type-scale {
+    --text-#{$name}: #{type-scale($step)};
+  }
+}
+
+h1 { font-size: type-scale(6); }
+h2 { font-size: type-scale(4); }
+h3 { font-size: type-scale(3); }
+h4 { font-size: type-scale(2); }
+h5 { font-size: type-scale(1); }
+h6 { font-size: type-scale(0); }
+
+@include media-query($on-laptop) {
+    h1 { font-size: type-scale(8); line-height: 0.8; }
+    h2 { font-size: type-scale(6); line-height: 0.9; }
+    h3 { font-size: type-scale(4); line-height: 1; }
+    h4 { font-size: type-scale(3); line-height: 1.1; }
+    h5 { font-size: type-scale(2); line-height: 1.2; }
+    h6 { font-size: type-scale(1); line-height: 1.3; }
+}

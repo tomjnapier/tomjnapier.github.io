@@ -44,7 +44,7 @@ html.theme--dark {
   --accent-three:       #ffcc66;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
-  --background:          #050a18;
+  --background:          hsl(225, 39%, 12%);
   --border:              #1d2230;
   --background--light:   hsl(228, 50%, 15%);
   --background--dark:    hsl(224, 100%, 8%);
@@ -131,5 +131,6 @@ html.theme--light {
   "components/post--single",
   "components/social-links",
   "components/syntax-highlighting",
-  "components/theme-switcher"
+  "components/theme-switcher",
+  "_type-scale.scss"
 ;
