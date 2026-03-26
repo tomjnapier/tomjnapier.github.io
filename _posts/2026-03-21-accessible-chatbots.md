@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "6 considerations for Accessible chatbots"
-date:   2026-03-14 09:00:00 +0100
+date:   2026-03-26 09:00:00 +0100
 categories: accessibility
 custom-excerpt: A few areas to focus on when trying to make an AI chatbot accessible.
 published: true

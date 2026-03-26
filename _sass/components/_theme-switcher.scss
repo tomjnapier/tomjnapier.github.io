@@ -148,3 +148,26 @@
     }
 
 }
+
+@media (forced-colors: active) {
+
+    .site-theme-switcher__toggle {
+        border: 2px solid ButtonBorder;
+
+        svg {
+            fill: ButtonFace;
+            stroke: ButtonBorder;
+        }
+
+    }
+
+    .site-theme-switcher__toggle--active { 
+
+        svg {
+            fill: ButtonText;
+            stroke: ButtonBorder;
+        }
+
+    }
+
+}
