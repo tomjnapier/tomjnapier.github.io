@@ -13,6 +13,13 @@
     width: 100%;
     max-width: 100%;
     position: relative;
+    border: 2px solid transparent;
+}
+
+@media (forced-colors: active) {
+    .post-list__item {
+        border: 2px solid currentColor;
+    }
 }
 
 .post__title {
