@@ -30,6 +30,7 @@ github_username:  tomjnapier
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 sass:
   style: compressed
@@ -54,6 +55,19 @@ collections:
 
 include: ['_pages']
 show_excerpts: true
+
+defaults:
+  - scope:
+      path: "" # This applies to all files in your project
+    values:
+      image: /assets/images/default-share.png
+
+#SEO/Social
+logo: /assets/images/social-logo.png
+twitter:
+  card: /assets/images/default-share.png
+locale: en_GB
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

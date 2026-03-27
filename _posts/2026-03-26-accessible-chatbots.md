@@ -5,6 +5,7 @@ date:   2026-03-26 09:00:00 +0100
 categories: accessibility
 custom-excerpt: A few areas to focus on when trying to make an AI chatbot accessible.
 published: true
+image: /assets/images/2026-03-26-accessible-chatbots/post-share.png
 ---
 
 I'm seeing more public sector product teams starting to build AI chatbots into their services. For many of them, this kind of interface is still uncharted territory. Some less than ideal practices from the big AI firms are being used for design references - and they're not always accessible.
@@ -16,7 +17,7 @@ So perhaps it's a good time to talk about a few areas to focus on when trying to
 In this post, I'm talking about web interfaces, where you can type a _prompt_ (an instruction to the AI) and you get a response back. I'm sure lots of people are familiar with AI chatbots by now (it's hard to do a Google search in 2026 without ending up interacting with Google's AI mode). But it's good to be clear about what I mean when I'm talking about AI chatbots here.
 
 The prompt is usually text, but it could include images, or videos too. The response is typically a mix of text, media, and suggested follow up questions. Here's an example from Anthropic's Claude interface:
-{% include post-image.html file="/2026-03-21-accessible-chatbots/Claude-screenshot.png" alt="Screenshot of the Claude chatbot interface. There's a big input space in the middle of the screen to write a prompt, with text above that reads 'Sunday Session, Tom?'" caption="Despite complex underlying technology, most chatbot interfaces are quite simple" %}
+{% include post-image.html file="/2026-03-26-accessible-chatbots/Claude-screenshot.png" alt="Screenshot of the Claude chatbot interface. There's a big input space in the middle of the screen to write a prompt, with text above that reads 'Sunday Session, Tom?'" caption="Despite complex underlying technology, most chatbot interfaces are quite simple" %}
 
 In many ways, it's a simple interface, and the accessibility considerations aren't that complex. So what do we need to think about?
 
@@ -106,7 +107,7 @@ First, you'll probably have your prompt input area stuck to bottom of the viewpo
 
 Second, you might want more than one scrollable area in your chatbot interface. If you have a sidebar or panel next to the main chat interface, you might not want to scroll the whole page to get to that sidebar content. You can put the sidebar content in a scrollable container. That container needs to be scrollable with a keyboard (using arrow keys), as well as a mouse.
 
-{% include post-image.html file="/2026-03-21-accessible-chatbots/claude-sidebar.png" alt="Screenshot of the Claude chatbot interface in a small window. Controls in a sidebar don't fit in the window, so the sidebar has scroll bars to access all the controls." caption="If you have different scrollable areas in the interface, you need to make sure you can scroll all of them with a keyboard." %}
+{% include post-image.html file="/2026-03-26-accessible-chatbots/claude-sidebar.png" alt="Screenshot of the Claude chatbot interface in a small window. Controls in a sidebar don't fit in the window, so the sidebar has scroll bars to access all the controls." caption="If you have different scrollable areas in the interface, you need to make sure you can scroll all of them with a keyboard." %}
 
 ### WCAG Success Criteria to pay attention to
 - [2.1.1 Keyboard](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html)
@@ -118,7 +119,7 @@ Let's think back to the first screenshot in this post, of the Claude interface. 
 
 When zoomed into the screen with 8 or 10 times magnification, finding that prompt input is going to be difficult for some users.
 
-{% include post-image.html file="/2026-03-21-accessible-chatbots/copilot-magnified.jpg" alt="Screenshot of the Copilot chatbot interface, magnified using a screen magnifier. There are controls in a sidebar, but the prompt input is somewhere off screen." caption="Even with moderate zoom, there's no sign of the prompt input here - we have to go hunting for it." %}
+{% include post-image.html file="/2026-03-26-accessible-chatbots/copilot-magnified.jpg" alt="Screenshot of the Copilot chatbot interface, magnified using a screen magnifier. There are controls in a sidebar, but the prompt input is somewhere off screen." caption="Even with moderate zoom, there's no sign of the prompt input here - we have to go hunting for it." %}
 
 There might be several ways to address this. Adding in controls to skip to the prompt input could be an option. Aligning the prompt input closer to the top left of the viewport could be another. 
 
@@ -142,7 +143,7 @@ A far simpler naming method is to refer to the "above" or "previous" response. F
 
 I have to admit, I spend so much time in the mindset that elements need to be linked programmatically. Sometimes I forget about this more straightforward approach.
 
-{% include post-image.html file="/2026-03-21-accessible-chatbots/axe-assistant-feedback.png" alt="screenshot of a response from Deque's Axe Assistant. There are three feedback controls represented by a thumb up, thumb down and a message. The title of the thumb up control is showing. it says 'Like the above chat message'." caption="Deque's Axe Assistant has an \"aria-label\" and a \"title\" that provide a name for feedback buttons. It's clear which button is for which response." %}
+{% include post-image.html file="/2026-03-26-accessible-chatbots/axe-assistant-feedback.png" alt="screenshot of a response from Deque's Axe Assistant. There are three feedback controls represented by a thumb up, thumb down and a message. The title of the thumb up control is showing. it says 'Like the above chat message'." caption="Deque's Axe Assistant has an \"aria-label\" and a \"title\" that provide a name for feedback buttons. It's clear which button is for which response." %}
 
 ## 6. Animations are respectful
 
