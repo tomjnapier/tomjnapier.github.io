@@ -59,7 +59,7 @@ OK, perfect! The log role is exactly what we need. In our chat interface, we're 
 
 If you look through the WCAG docs, you can find [a working example of the log role](https://www.w3.org/WAI/WCAG21/working-examples/aria-role-log/chatlog.html), using a chat interaction to demonstrate, no less.
 
-The log role implicitly uses `aria-live="polite"` and `aria-atomic="true"`. There's no harm in setting those attributes separately too, to make it clear what the code is doing.
+The log role implicitly uses `aria-live="polite"` and `aria-atomic="false"`. There's no harm in setting those attributes separately too, to make it clear what the code is doing.
 
 ### Announce that there is a new message, but don't announce the message
 
