@@ -6,7 +6,7 @@ layout: default
 
   {%- if page.title -%}
     <header class="page__header">
-      <img class="sticker" alt="Me and my partner Jen, bikepacking in Scotland" src="{{ "/assets/images/me-and-jen-in-scotland.jpg" | relative_url }}"/>
+      <img fetchpriority="high" class="sticker" alt="Me and my partner Jen, bikepacking in Scotland" src="{{ "/assets/images/me-and-jen-in-scotland.webp" | relative_url }}"/>
       <h1 class="page__title">{{ page.title }}</h1>
     </header>
   {%- endif -%}
