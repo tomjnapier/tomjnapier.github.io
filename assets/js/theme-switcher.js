@@ -59,12 +59,17 @@ class ThemeSwitcher {
   // Do stuff when the UI is interacted with
   bindUIActions() {
 
-    const toggle  = this.nodeList.toggle;
-    const options = this.nodeList.options;
-
+    const { toggle, options } = this.nodeList
+  
     // Open and close the options menu
     toggle.addEventListener('click', () => {
       this.toggleOptionsMenu()
+    })
+
+    window.addEventListener('click', event => {
+      if(this.isOutsideThemeSwitcherClick(event)) {
+        this.toggleOptionsMenu( true )
+      }
     })
 
     // Close the options menu on escape
@@ -88,8 +93,7 @@ class ThemeSwitcher {
   // Toggle open the options menu
   toggleOptionsMenu( close = false ) {
 
-    const toggle = this.nodeList.toggle;
-    const optionsMenu = this.nodeList.optionsMenu;
+    const { toggle, optionsMenu } = this.nodeList
 
     // If we're explicitly closing, do that, otherwise toggle state
     if ( close ) {
@@ -110,8 +114,8 @@ class ThemeSwitcher {
     if ('' === theme)
       return;
 
-    const html    = this.nodeList.rootElement
-    const options = this.nodeList.options
+    const { rootElement: html, options } = this.nodeList
+
     let themeToSet
 
     // Add current status to current theme in the menu
@@ -142,6 +146,12 @@ class ThemeSwitcher {
     html.classList.remove('theme--light', 'theme--dark')
     html.classList.add( 'theme--' + themeToSet )
 
+  }
+
+  isOutsideThemeSwitcherClick( event ) {
+    const { toggle, optionsMenu } = this.nodeList
+    const clickTarget = event.target
+    return clickTarget !== toggle && !optionsMenu.contains(clickTarget)
   }
 
 }
