@@ -118,6 +118,22 @@ img {
   }
 
 }
+
+@include media-query($on-laptop) {
+  img.sticker {
+    width: 17rem;
+    height: 17rem;
+    margin-bottom: -7rem;
+
+    + .page__title {
+      background: linear-gradient(0deg, hsla(225, 39%, 12%, 1), hsla(225, 39%, 12%, 0) );
+      z-index: 1;
+      position: relative;
+    }
+
+  }
+}
+
 .image-wrapper {
   position: relative;
 
