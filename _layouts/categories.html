@@ -3,7 +3,8 @@ layout: default
 ---
 <div class="blog page">
     {%- if page.title -%}
-    <div class="page__header">
+    <div class="page__header page__header--group">
+      <span class="page__caption">Posts with a category of</span>
       <h1 class="page__title">{{ page.title }}</h1>
     </div>
     {%- endif -%}

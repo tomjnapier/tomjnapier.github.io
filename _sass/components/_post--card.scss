@@ -27,6 +27,9 @@
         left: 0;
         bottom: 0;
         display: block;
+
+        border-radius: var(--radius--large);
+        outline: 0.125rem solid var(--border);
     }
     
     .post__link:focus {
@@ -34,7 +37,6 @@
     }
     
     .post__link:focus:before {
-        border-radius: var(--radius--large);
         outline: 0.25rem solid var(--focus-color);
     }
 

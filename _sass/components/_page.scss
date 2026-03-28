@@ -17,8 +17,16 @@
     flex: 1;
 }
 
+.page--blog .page__content {
+    color: var(--text-color-light);
+}
+
 .page__header {
     margin-top: 4rem;
+}
+
+.page__caption {
+    color: var(--text-color-light);
 }
   
 .page__title {
@@ -73,5 +81,11 @@
     .page__title {
         margin-top: 4rem;
         margin-bottom: 4rem;
+    }
+
+    .page__header--group {
+        .page__title {
+            margin-top: 0;
+        }
     }
 }

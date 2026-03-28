@@ -45,7 +45,7 @@ html.theme--dark {
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
   --background:          hsl(225, 39%, 12%);
-  --border:              #1d2230;
+  --border:              hsl(225, 33%, 27%);
   --background--light:   hsl(228, 50%, 15%);
   --background--dark:    hsl(224, 100%, 8%);
   --background--dark-on-color: hsl(228, 28%, 70%);
@@ -67,18 +67,19 @@ html.theme--light {
   --accent-three:        #b84000;
   --accent-one-on-color: #091833;
   --accent-two-on-color: #091833;
-  --background:          hsl(30,95%,98%);
-  --border:              hsl(228, 11%, 93%);
+  --background:          hsl(30, 95%, 98%);
+  --border:              hsl(30, 15%, 90%);
   --background--light:   hsl(30,40%,94%);
   --background--dark:    hsl(224, 100%, 8%);
   --background--dark-on-color: hsl(228, 28%, 70%);
   --link-color:          hsl(251, 100%, 60%);
   --footer-link-color:   hsl(184, 100%, 56%);
   --text-color:          hsl(228, 100%, 2%);
+  --text-color-light:    hsl(228, 35%, 45%);
   --text-color-grey:     hsl(228, 20%, 40%);
   --text-color-dark-grey:hsl(251, 22%, 35%);
   --focus-color:         hsl(251, 100%, 60%);
-  --focus-on-color:        var(--background);
+  --focus-on-color:       var(--background);
 }
 
 .accent-one--fill {
