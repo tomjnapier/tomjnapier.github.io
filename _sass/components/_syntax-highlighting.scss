@@ -10,6 +10,11 @@ code {
   color: #282A36;
 }
 
+pre, code {
+  font-family: "Google Sans Code", monospace;
+  font-weight: 400;
+}
+
 .theme--light {
   code {
     background: var(--background--medium);

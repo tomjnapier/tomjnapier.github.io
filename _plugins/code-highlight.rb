@@ -1,24 +1,29 @@
 module Jekyll
   class AccessibleHighlightBlock < Tags::HighlightBlock
-    def render(context)
-      # 1. Capture the full markup (e.g., 'html "My Label"')
-      full_markup = @markup.dup
+    def initialize(tag_name, markup, tokens)
+      # 1. Capture the full markup to extract our label
+      @full_markup = markup.dup
       
-      # 2. Extract the first word as the language
-      lang = full_markup.split.first
+      # 2. Extract just the first word (the language) for the parent class
+      # This prevents the 'Syntax Error' during Jekyll's internal initialization
+      clean_markup = markup.split.first || ""
+      
+      super(tag_name, clean_markup, tokens)
+    end
+
+    def render(context)
+      parts = @full_markup.split
+      lang = parts.first
       
       # 3. Extract the label (everything after the language)
-      label = full_markup.split[1..-1].join(' ').gsub(/['"]/, '')
+      label = parts[1..-1].join(' ').gsub(/['"]/, '')
       label = "#{lang.upcase} code sample" if label.empty?
 
-      # 4. CRITICAL: Clean @markup so the original 'super' only sees the language
-      # This prevents the "Syntax Error in tag 'highlight'"
-      @markup = lang 
 
-      # 5. Get the original output
+      # 4. Get the original HTML output from the parent
       original_output = super
       
-      # 6. Inject attributes into the <figure> tag
+      # 5. Inject attributes into the <figure> tag
       accessibility_attrs = %Q{tabindex="0" role="region" aria-label="#{label}"}
       original_output.sub('<figure', "<figure #{accessibility_attrs}")
     end
