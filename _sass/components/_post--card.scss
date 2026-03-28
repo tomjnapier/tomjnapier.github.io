@@ -1,3 +1,5 @@
+@use "../_settings" as *;
+
 .post--card {
     background-color: var(--background--light);
     margin-bottom: 2rem;

@@ -1,3 +1,5 @@
+@use "../_settings" as *;
+
 .page__heading {
     @include relative-font-size(4);
     letter-spacing: -1px;

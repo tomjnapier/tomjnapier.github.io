@@ -1,10 +1,8 @@
+@use "../_settings" as *;
+
 /**
  * Syntax highlighting styles
  */
-
-@media (prefers-color-scheme: dark) {
-
-}
 
 code {
   border: 2px solid #4d577c;

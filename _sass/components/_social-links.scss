@@ -1,3 +1,5 @@
+@use "../_settings" as *;
+
 .social-media-list a:hover {
     .username {
         text-decoration: underline;
