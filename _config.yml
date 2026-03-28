@@ -26,6 +26,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tomjnapier.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  tomjnapier
 
+author: 
+  name: "Tom J Napier"
+  email: "hi@tomjnapier.co.uk"
+
 # Build settings
 plugins:
   - jekyll-feed
