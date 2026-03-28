@@ -18,36 +18,33 @@
       <div class="footer-col footer-col-3">
         <h2 class="footer-heading">{{ site.title | escape }}</h2>
         <p>{{- site.description | escape -}}</p>
+        {%- if page_paths -%}
+          <nav class="footer-nav" aria-labelledby="footer-nav-heading">
+            <h2 id="footer-nav-heading" class="visually-hidden">Legal links</h2>
+            <ul class="footer-nav__links">
+              {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title or my_page.menuName -%}
+                {%- if my_page.menuName -%}
+                  {%- assign navTitle = my_page.menuName -%}
+                {%- else -%}
+                  {%- assign navTitle = my_page.title -%}
+                {%- endif -%}
+                <li class="footer-nav__link-item">
+                  <a class="footer-nav__link" href="{{ my_page.url | relative_url }}">{{ navTitle | escape }}</a>
+                </li>
+                {%- endif -%}
+              {%- endfor -%}
+              </ul>
+          </nav>
+        {%- endif -%}
       </div>
       <div class="footer-col footer-col-1">
-        <h2 class="footer-heading">Profile Links</h2>
+        <h2 class="footer-heading">Follow & Subscribe</h2>
         {%- include social.html -%}
       </div>
     </div>
 
-  </div>
-
-  <div class="wrapper">
-    {%- if page_paths -%}
-    <nav class="footer-nav" aria-labelledby="footer-nav-heading">
-      <h2 id="footer-nav-heading" class="visually-hidden">Legal links</h2>
-      <ul class="footer-nav__links">
-        {%- for path in page_paths -%}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title or my_page.menuName -%}
-          {%- if my_page.menuName -%}
-            {%- assign navTitle = my_page.menuName -%}
-          {%- else -%}
-            {%- assign navTitle = my_page.title -%}
-          {%- endif -%}
-          <li class="footer-nav__link-item">
-            <a class="footer-nav__link" href="{{ my_page.url | relative_url }}">{{ navTitle | escape }}</a>
-          </li>
-          {%- endif -%}
-        {%- endfor -%}
-        </ul>
-    </nav>
-  {%- endif -%}
   </div>
 
 </footer>
