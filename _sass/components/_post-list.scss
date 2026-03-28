@@ -4,8 +4,6 @@
     margin-top: 4rem;
 }
 
-.post-list__heading {}
-
 .post-list__items {
     list-style-type: none;
     margin: 0;
@@ -24,38 +22,3 @@
     }
 }
 
-.post__title {
-    letter-spacing: 0;
-    color: var(--text-color);
-    font-weight: $base-bold-weight;
-}
-
-.post__link {
-
-    padding: 0 2rem 2rem;
-    display: block;
-    border-radius: var(--radius--large);
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
-
-}
-
-.post__categories {
-    span {
-        margin: 0 1rem 0.25rem 0;
-    }
-}
-
-.post__teaser {
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-@include media-query($on-tablet) {
-    .post__teaser {
-        font-size: 1.25rem;
-    }
-}

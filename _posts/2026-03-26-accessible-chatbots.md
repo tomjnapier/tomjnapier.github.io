@@ -46,7 +46,7 @@ What's the log role? "A type of live region where new information is added in me
 
 OK, perfect! The log role is exactly what we need. In our chat interface, we're adding new information in a meaningful order (prompt, then response, then follow up prompt, et cetera.)
 
-{% highlight html %}
+{% code_highlight html ARIA Log role code example %}
 <div role="log" aria-labelledby="chat-heading">
     <h2 id="chat-heading">AI chat history</h2>
     <ul>
@@ -56,7 +56,7 @@ OK, perfect! The log role is exactly what we need. In our chat interface, we're 
         and parmesan, and simple tomato basil soup</li>
     </ul>
 </div>
-{% endhighlight %}
+{% endcode_highlight %}
 
 If you look through the WCAG docs, you can find [a working example of the log role](https://www.w3.org/WAI/WCAG21/working-examples/aria-role-log/chatlog.html), using a chat interaction to demonstrate, no less.
 
@@ -70,9 +70,9 @@ Further, responses might be very long, or multi-part. That means it might be a b
 
 Implementing this approach is a case of having a container with a role of "status", whose content gets added, updated or replaced. The container should be present when the page loads - you need to add the content to the container when you want a status message to be announced.
 
-{% highlight html %}
+{% code_highlight html ARIA status role code example%}
 <div role="status" aria-atomic="true">Response generating</div>
-{% endhighlight %}
+{% endcode_highlight %}
 
 You need to give careful consideration to what response statuses you want to convey. It also might help non-screen reader users to see these statuses as well, so you might not want to hide this content.
 

@@ -52,6 +52,7 @@ html.theme--dark {
   --footer-link-color:   hsl(184, 100%, 56%);
   --link-color-hover:    hsl(198, 100%, 47%);
   --text-color:          hsl(228, 0%, 100%);
+  --text-color-emphasis: hsl(228, 10%, 90%);
   --text-color-grey:     hsl(228, 20%, 80%);
   --text-color-light:    hsl(228, 50%, 70%);
   --focus-color:         hsl(251, 100%, 60%);
@@ -69,11 +70,13 @@ html.theme--light {
   --background:          hsl(30, 95%, 98%);
   --border:              hsl(30, 15%, 90%);
   --background--light:   hsl(30,40%,94%);
+  --background--medium:  hsl(30, 50%, 90%);
   --background--dark:    hsl(224, 100%, 8%);
   --background--dark-on-color: hsl(228, 28%, 70%);
   --link-color:          hsl(251, 100%, 60%);
   --footer-link-color:   hsl(184, 100%, 56%);
-  --text-color:          hsl(228, 100%, 2%);
+  --text-color:          hsl(228, 25%, 35%);
+  --text-color-emphasis: hsl(228,50%, 25%);
   --text-color-light:    hsl(228, 35%, 45%);
   --text-color-grey:     hsl(228, 20%, 40%);
   --text-color-dark-grey:hsl(251, 22%, 35%);

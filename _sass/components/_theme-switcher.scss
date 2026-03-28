@@ -48,7 +48,7 @@
         cursor: pointer;
         background-color: transparent;
         display: flex;
-        color: white;
+        color: var(--text-color);
         outline-offset: -4px;
         
         .theme--light & {
@@ -94,34 +94,74 @@
     border: 0;
     background-color: rgb( 255 255 255 / 5%);
     border-radius: var(--radius);
-    color: white;
+    color: var(--text-color-light);
     font-size: .875rem;
     padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
     cursor: pointer;
-
-    .theme--light & {
-        background-color: var(--background--light);
-        color: var(--accent-one-on-color);
-        svg {
-            stroke: var(--accent-one-on-color);
-            fill: var(--accent-one-on-color);
-        }
-    }
+    transition: .1s all ease-in-out;
 
     svg {
         width: 1.25rem;
         height: 1.25rem;
-        stroke: white;
+        stroke: var(--text-color-light);
+        fill: var(--text-color-light);
         stroke-width: 2px;
         margin-right: 0.5rem;
+        transition: .1s all ease-in-out;
+    }
+
+    &:hover {
+        color: var(--text-color);
+        background-color: rgb( 255 255 255 / 10%);
+    
+        svg {
+            stroke: var(--text-color);
+            fill: var(--text-color);
+        }
+
+    }
+
+    .theme--light & {
+
+        background-color: var(--background--light);
+        color: var(--accent-one-on-color);
+
+        svg {
+            stroke: var(--text-color);
+            fill: var(--text-color);
+        }
+
+
+        &:hover {
+            color: var(--text-color-emphasis);
+            background-color: var(--background--medium);
+        
+            svg {
+                stroke: var(--text-color-emphasis);
+                fill: var(--text-color-emphasis);
+            }
+
+        }
+
     }
 
     &--active {
 
         background-color: var(--accent-two);
         color: var(--background);
+
+        &:hover {
+            background-color: var(--accent-two);
+            color: var(--background);
+
+            svg {
+                fill: var(--accent-two-on-color);
+                stroke: var(--accent-two-on-color);
+            }
+
+        }
 
         svg {
             fill: var(--accent-two-on-color);

@@ -2,6 +2,10 @@
 
 .post--single {
 
+    .post__title {
+        font-weight: $base-bold-weight;
+    }
+
     .post__content,
     .post__meta:not(.post__meta--top) {
         padding-bottom: 0rem;
