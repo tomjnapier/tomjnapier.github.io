@@ -16,32 +16,12 @@ layout: default
     <section class="post-list">
       <ul class="post-list__items">
         {%- for post in site.posts -%}
-        <li class="post-list__item post post--card">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <div class="post__meta">
-            {%- if post.categories -%}
-              <div class="post__categories">
-                <span class="visually-hidden">Categorised as </span>
-                {%- for category in post.categories -%}
-                  <span class="post__category">{{category}}</span>
-                {%- endfor -%}
-              </div>
-            {%- endif -%}
-            <div class="post__date"><span class="visually-hidden">Posted on </span>{{ post.date | date: date_format }}</div>
-          </div>
-          <h2 class="post__title" id="post-{{post.id}}">
-            <a class="post__link no-background-focus" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h2>
-          {%- if post.custom-excerpt != '' -%}
-            <p class="post__teaser" id="post-teaser-{{post.id}}">{{ post.custom-excerpt }}</p>
-          {%- endif -%}
-        </li>
+          {% include post-card.html post=post %}
         {%- endfor -%}
       </ul>
     </section>
   {%- endif -%}
+
   {% if paginator.total_pages > 1 %}
   <ul>
     {% if paginator.previous_page %}
