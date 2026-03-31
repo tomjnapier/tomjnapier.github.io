@@ -32,19 +32,21 @@ In many ways, it's a simple interface, and the accessibility considerations aren
 
 Let's start with announcements. Most of the teams I've worked with understand that dynamic content changes need to be announced by screen reader software.
 
-But there are a few different approaches for AI responses that you could take here. Which way you get the responses to be announced depends on the response.
+But there are a few possible approaches to AI responses that you could take here. Which way you get the responses to be announced in part depends on the response.
 
 ### Read the whole message
 
-A common approach to have screen readers announce the whole body of the response when it has loaded. This should work fine where the chatbot responses are short and mostly text. To get content to be automatically announced by screen readers, we need to be thinking about `live` regions, using ARIA. This will mean the user doesn't have to move keyboard focus, or the screen reader cursor to that bit of content.
+One approach might be to have screen readers announce the whole body of the response when it has loaded. This could be OK when the chatbot responses are very short and just text. To get content to be automatically announced by screen readers, we could use `live` regions, with ARIA. This will mean the user doesn't have to move keyboard focus, or the screen reader cursor to that bit of content. 
+
+The live region announcement won't include any semantic information. So if there's buttons, headings, links in the changed content, the fact that they're buttons, headings or links won't be conveyed by screen readers. It'll be a bit like the contents were plain text. The semantic information will be there for screen reader users if they go to the response and read it, but it won't be part of automatic announcement.
 
 Here, we could add in each of the attributes we need to get screen readers to announce the new content. So, adding `aria-live="polite"` to have screen readers announce the new content when there's a suitable gap. And `aria-atomic="false"` to make sure the screen reader only reads the content that has changed.
 
-But we can also use another role that's built just for our use case. The `log` role will add what we need.
+The `log` role is another option for this. The log role implicitly uses `aria-live="polite"` and `aria-atomic="false"`. Semantically, it should be just what we need. 
 
-What's the log role? "A type of live region where new information is added in meaningful order and old information may disappear [...] Examples include chat logs."
+What's the log role? According to [the WAI-ARIA 1.2 spec](https://www.w3.org/TR/wai-aria-1.2/#log), it's "A type of live region where new information is added in meaningful order and old information may disappear [...] Examples include chat logs." In our chat interface, we're adding new information in a meaningful order (prompt, then response, then follow up prompt, et cetera.)
 
-OK, perfect! The log role is exactly what we need. In our chat interface, we're adding new information in a meaningful order (prompt, then response, then follow up prompt, et cetera.)
+Here's how that would be implemented in code:
 
 {% code_highlight html "ARIA Log role code example" %}
 <div role="log" aria-labelledby="chat-heading">
@@ -58,17 +60,23 @@ OK, perfect! The log role is exactly what we need. In our chat interface, we're 
 </div>
 {% endcode_highlight %}
 
-If you look through the WCAG docs, you can find [a working example of the log role](https://www.w3.org/WAI/WCAG21/working-examples/aria-role-log/chatlog.html), using a chat interaction to demonstrate, no less.
+If you look through the WCAG docs, you can also find [a working example of the log role](https://www.w3.org/WAI/WCAG21/working-examples/aria-role-log/chatlog.html), using a chat interaction to demonstrate, no less.
 
-The log role implicitly uses `aria-live="polite"` and `aria-atomic="false"`. There's no harm in setting those attributes separately too, to make it clear what the code is doing.
+It sounds like it fits the bill, but you need to test this. Support for the `log` role (and other live region roles) across screen readers has been historically mixed. I tested with JAWS and macOS VoiceOver and it behaved as expected. However, iOS VoiceOver didn't always announce new content correctly. 
+
+Speaking to other accessibility specialists, there's a theme around screen readers on touch devices not supporting the log role well. Check out [A11y Support](https://a11ysupport.io/tech/aria/log_role), [Deque's Live Region Playground](https://dequeuniversity.com/library/aria/liveregion-playground), and [Sara Soueidan's in-depth two-part article on live regions](https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/) if you want to dive into more detail here.
+
+So, perhaps a different approach...
 
 ### Announce that there is a new message, but don't announce the message
 
-Not announcing the actual message content might not seem very helpful on the face of it. However, some users might prefer this, and depending on how your chatbot produces responses, it might be better all round. See, some chatbots don't output a response in a one-shot. They output a line of text at a time (or part of an image). Starting to announce the whole response content when the response isn't complete yet might not be a good experience.
+Not announcing the actual message content might not seem very helpful on the face of it. However, this might be a better approach for an AI chatbot responses. See, some chatbots don't output a response in a one-shot. They output a line of text at a time (or part of an image). Starting to announce the whole response content when the response isn't complete yet might not be a good experience.
 
-Further, responses might be very long, or multi-part. That means it might be a bit overbearing to announce the entirety of the response. So it might be better for the screen reader to announce the status of response generation - for example "response generating", or  "response ready" - rather than the response itself. That would help us out when our responses are incomplete, long or multi-part.
+Further, responses might be very long, multi-part, or have different kinds of content. That means it might be a bit overbearing to announce the entirety of the response, and some of the content might not be as clear without the semantic context. 
 
-Implementing this approach is a case of having a container with a role of "status", whose content gets added, updated or replaced. The container should be present when the page loads - you need to add the content to the container when you want a status message to be announced.
+So it might be better for the screen reader to announce the status of response generation - for example `"response generating"`, or  `"response ready"` - rather than the response itself. That would help us out when our responses are incomplete, long or multi-part. You can also provide mechanisms for users to jump straight to that response too, so that they can go and read it for themselves (Deque's Axe Assistant work like this, with a button to "Go to recent response").
+
+Implementing this can be achieved by having a container with a role of "status", whose content gets added, updated or replaced. The container should be present when the page loads - you need to add the content to the container when you want a status message to be announced.
 
 {% code_highlight html "ARIA Status role code example" %}
 <div role="status" aria-atomic="true">Response generating</div>
@@ -84,7 +92,7 @@ You need to give careful consideration to what response statuses you want to con
 
 We know that form inputs need to be labelled so that users know what to do. There should be a visible label, and an accessible name (usually just the same as the label). Sighted users can rely on the visible label to know what to input, and screen reader users will hear the accessible name of the input. 
 
-Voice recognition software users work with a combination of the two. Most voice recogntion users will speak commands based on what they see on screen. Then the software interacts programmatically with the accessible name. So, I can see an input labelled "First Name", I say "click First Name", and as long as the accessible name matches, my command should work.
+Voice recognition software users work with a combination of the two. Most voice recognition users will speak commands based on what they see on screen. Then the software interacts programmatically with the accessible name. So, I can see an input labelled "First Name", I say "click First Name", and as long as the accessible name matches, my command should work.
 
 This is fairly basic need, and one that most teams understand the importance of. When it comes to chatbots, an unfortunate trend has taken hold. There’s some design convergence around not visibly labelling the prompt input field. Some chatbots use placeholder text, but that's not really much better. Chat-GPT, Copilot, Google AI mode and Claude all use placeholders to label the prompt input. They also each have curious ways of providing accessible names.
 
@@ -103,7 +111,9 @@ So, don't be like the others - add **a persistent, visible label**, and make tha
 
 Chats can get long! So that means we're going to have to scroll up and down to read back through the chat. Most of the time, this is no problem - you just scroll the page. There are a couple of things to flag here though. 
 
-First, you'll probably have your prompt input area stuck to bottom of the viewport. That's fine, but bear in mind any sticky content (using `position: fixed` or `position: sticky` in CSS) will obscure content beneath it. You'll need to ensure that you don't completely obscure focusable elements in the chat with your sticky input. Check out 2.4.11 Focus Not Obscured in WCAG for more detail here. A good way to test this is to `Tab` forward through interactive elements and check if your sticky content hides anything. And then, crucially, pressing `Shift + Tab` to go back through elements checking the same thing. Navigating with a keyboard is more difficult when keyboard focus is not visible, or obscured. So we need to implement sticky content carefully.
+First, you'll probably have your prompt input area stuck to bottom of the viewport. That's fine, but bear in mind any sticky content (using `position: fixed` or `position: sticky` in CSS) will obscure content beneath it. You'll need to ensure that you don't completely obscure focusable elements in the chat with your sticky input. 
+
+Check out [2.4.11 Focus Not Obscured](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) in WCAG for more detail here. A good way to test this is to `Tab` forward through interactive elements and check if your sticky content hides anything. And then, crucially, pressing `Shift + Tab` to go back through elements checking the same thing. Navigating with a keyboard is more difficult when keyboard focus is not visible, or obscured. So we need to implement sticky content carefully.
 
 Second, you might want more than one scrollable area in your chatbot interface. If you have a sidebar or panel next to the main chat interface, you might not want to scroll the whole page to get to that sidebar content. You can put the sidebar content in a scrollable container. That container needs to be scrollable with a keyboard (using arrow keys), as well as a mouse.
 
@@ -147,9 +157,9 @@ I have to admit, I spend so much time in the mindset that elements need to be li
 
 ## 6. Animations are respectful
 
-Dynamic content - the stuff that gets injected into the page, without a page reload - is pretty much a necessity with AI chatbots. More often than not, that dynamic content is animated as it loads in. I'm sure this is a smoke and mirrors conceit, rather than a technological requirement...
+Dynamic content - the stuff that gets injected into the page, without a page reload - is pretty much a necessity with AI chatbots. More often than not, that dynamic content is animated as it loads in. I'm sure this is a smoke and mirrors conceit, rather than a technological constraint...
 
-If we're animating stuff on the page, that can be engaging for some people, but actively harmful for others. That does not mean we cannot ever use animations. We do need to careful when we do use them though, and we need to respect the preferences of users who don't want to see these animations at all.
+You might also want to use animations to indicate a "loading" or "response generating" status. If we're animating stuff on the page, that can be engaging for some people, but actively harmful for others. That does not mean we cannot ever use animations. We need to be careful when we do use them though, and we need to respect the preferences of users who don't want to see these animations at all.
 
 Check out this post from Adobe's Stefan Chitu: [Animation that fails safely: Defensive design for motion-sensitive users](https://adobe.design/stories/leading-design/animation-that-fails-safely-defensive-design-for-motion-sensitive-users). Stefan gave a great talk at this year's [Axe-Con](https://www.deque.com/axe-con/), based on that post, that has lots of useful tips on designing accessible animations.
 
@@ -158,4 +168,6 @@ Check out this post from Adobe's Stefan Chitu: [Animation that fails safely: Def
 
 ## Conclusion
 
-So there are my thoughts - I'll come back and update this post as we learn more about how chatbots are used in a public sector context. In the meantime, let's make sure we go back to first principles when designing interfaces, even if the technology is treading into new territory.
+So there are my thoughts - I'll come back and update this post as I learn more about how chatbots are used in a public sector context and get more practical examples. In the meantime, let's make sure we go back to first principles when designing interfaces, even if the technology is treading into new territory.
+
+**Updated 31/03/26** - I updated the section around the `log` role to add some additional warnings about its use (and to more clearly steer towards the "Announce that there is a new message, but don't announce the message" route). Thanks to Adam for the excellent background knowledge on the log role here.
