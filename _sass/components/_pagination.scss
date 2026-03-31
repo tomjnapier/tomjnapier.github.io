@@ -1,0 +1,11 @@
+@use "../_settings" as *;
+
+.pagination {
+    margin: 0;
+    list-style-type: none;
+}
+
+.pagination__item {}
+.pagination__item--newer {}
+.pagination__item--older {}
+.pagination__link {}

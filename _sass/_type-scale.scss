@@ -32,6 +32,11 @@ h4 { font-size: type-scale(2); line-height: 1.1; }
 h5 { font-size: type-scale(1); line-height: 1.2; }
 h6 { font-size: type-scale(0); line-height: 1.3; }
 
+.heading--small {
+    font-size: type-scale(2); 
+    line-height: 1.2; 
+}
+
 @include media-query($on-laptop) {
     h1 { font-size: type-scale(8); line-height: 0.8; margin-bottom: 3rem; }
     h2 { font-size: type-scale(6); line-height: 0.9; margin-bottom: 2.5rem; }
@@ -39,4 +44,11 @@ h6 { font-size: type-scale(0); line-height: 1.3; }
     h4 { font-size: type-scale(3); line-height: 1.1; margin-bottom: 1.5rem; }
     h5 { font-size: type-scale(2); line-height: 1.2; margin-bottom: 1.25rem; }
     h6 { font-size: type-scale(1); line-height: 1.3; margin-bottom: 1rem; }
+
+    .heading--small {
+        font-size: type-scale(3); 
+        line-height: 1.1;
+        margin-bottom: 1.5rem; 
+    }
+
 }

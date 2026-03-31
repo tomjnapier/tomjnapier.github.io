@@ -1,5 +1,6 @@
 ---
 layout: default
+pagination: true
 ---
 <div class="blog page">
     {%- if page.title -%}
@@ -12,12 +13,12 @@ layout: default
       {{ content }}
     </div>
   
-    {%- if site.posts.size > 0 -%}
+    {%- if paginator.posts.size > 0 -%}
       <section class="post-list">
         <ul class="post-list__items">
-          {%- for post in site.posts -%}
+          {%- for post in paginator.posts -%}
             {%- if post.categories -%}
-              {%- for cat in post.categories -%}
+              {%- for cat in paginator.categories -%}
                 {%- if cat == page.category -%}
                   {% include post-card.html post=post %}
                 {%- endif -%}
@@ -26,4 +27,23 @@ layout: default
           {%- endfor -%}
         </ul>
       </section>
+
+      {% if paginator.total_pages > 1 %}
+        <nav aria-labelledby="pagination-label">
+          <h2 id="pagination-label" class="heading--small">Blog page navigation</h2>
+          <ul class="pagination">
+            {% if paginator.previous_page %}
+            <li class="pagination__item pagination__item--newer">
+              <a class="pagination__link"  href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer posts</a>
+            </li>
+            {% endif %}
+            {% if paginator.next_page %}
+            <li class="pagination__item pagination__item--newer">
+              <a class="pagination__link" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older posts</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      {% endif %}
+
     {%- endif -%}
