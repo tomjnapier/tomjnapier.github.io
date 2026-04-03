@@ -217,10 +217,10 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: var(--link-color);
-  text-decoration: 0.125rem underline;
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
   text-underline-offset: 0.125rem;
-  transition: text-decoration 0.2s ease-in-out;
-  border-radius: 1px;
+  transition: var(--transition);
 
   &:visited {
     color: var(--link-color);
@@ -228,9 +228,10 @@ a {
 
   &:hover,
   &:focus {
-    color: var(--link-color);
-    text-decoration: 0.25rem underline;
+    color: var(--link-color-hover);
+    text-decoration-thickness: 0.25rem;
     text-underline-offset: 0.125rem;
+    transition: var(--transition);
   }
 
   &:not(.no-background-focus) {
@@ -244,15 +245,21 @@ a {
 
     display: inline-flex;
     align-items: center;
+    transition: var(--transition);
+
+    svg {
+      fill: var(--link-color);
+      padding-left: 0.5rem;
+      transition: var(--transition);
+    }
 
     &:hover,
     &:focus {
-      transition: all 0.2s ease-in-out;
 
       svg {
         fill: var(--link-color-hover);
-        transition: all 0.2s ease-in-out;
       }
+
     }
 
     &:focus {
@@ -261,23 +268,24 @@ a {
         }
     }
 
-    svg {
-      fill: var(--link-color);
-      padding-left: 0.5rem;
-    }
+  }
 
+  &.action--reverse {
+    svg {
+      transform: rotate(180deg);
+    }
   }
 
   .page__content & {
     text-decoration: underline;
     text-decoration-thickness: 0.125rem;
     text-underline-offset: 0.125rem;
-    transition: text-decoration-thickness 0.2s ease-in-out;
+    transition: var(--transition);
 
     &:hover,
     &:focus {
       text-decoration-thickness: 0.25rem;
-      transition: all 0.2s ease-in-out;
+      transition: var(--transition);
     }
 
   }
