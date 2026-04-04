@@ -73,6 +73,23 @@ twitter:
   card: /assets/images/default-share.png
 locale: en_GB
 
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: "/page/:num/"
+  title: ":title - page :num"
+  sort_field: "date"
+  sort_reverse: true
+  trail: 
+    before: 2 # Number of links to show before the current page
+    after: 2  # Number of links to show after the current page
+  # autopages:
+  #   enabled: true
+  #   categories:
+  #     layouts: 
+  #       - categories.html  # Must match a file in your _layouts folder
+  #     title: "Posts in :cat"
+  #     permalink: "/category/:cat/"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

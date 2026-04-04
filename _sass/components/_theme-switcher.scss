@@ -92,7 +92,7 @@
 
     appearance: none;
     border: 0;
-    background-color: rgb( 255 255 255 / 5%);
+    background-color: var(--background--transparent);
     border-radius: var(--radius);
     color: var(--text-color-light);
     font-size: .875rem;
@@ -114,7 +114,7 @@
 
     &:hover {
         color: var(--text-color);
-        background-color: rgb( 255 255 255 / 10%);
+        background-color: var(--background--dark);
     
         svg {
             stroke: var(--text-color);

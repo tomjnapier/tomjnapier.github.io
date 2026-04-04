@@ -35,6 +35,7 @@ html {
   --radius--xlarge: .875rem;
   --content-width: 62.5rem;
   --content-width--large: 75rem;
+  --transition: all 0.2s ease-in-out;
 }
 
 html.theme--dark {
@@ -47,10 +48,12 @@ html.theme--dark {
   --border:              hsl(225, 33%, 27%);
   --background--light:   hsl(228, 50%, 15%);
   --background--dark:    hsl(224, 100%, 8%);
+  --background--transparent: hsl(225, 40%, 9%);
   --background--dark-on-color: hsl(228, 28%, 70%);
   --link-color:          hsl(184, 100%, 56%);
   --footer-link-color:   hsl(184, 100%, 56%);
-  --link-color-hover:    hsl(198, 100%, 47%);
+  --link-color-hover:    hsl(184, 100%, 80%);
+  --footer-link-color--hover:   hsl(184, 100%, 80%);
   --text-color:          hsl(228, 20%, 90%);
   --text-color-emphasis: hsl(228, 10%, 95%);
   --text-color-grey:     hsl(228, 20%, 80%);
@@ -75,6 +78,7 @@ html.theme--light {
   --background--dark-on-color: hsl(228, 28%, 70%);
   --link-color:          hsl(251, 100%, 60%);
   --footer-link-color:   hsl(184, 100%, 56%);
+  --footer-link-color--hover:   hsl(184, 100%, 80%);
   --text-color:          hsl(228, 25%, 35%);
   --text-color-emphasis: hsl(228,50%, 25%);
   --text-color-light:    hsl(228, 35%, 45%);

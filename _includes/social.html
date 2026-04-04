@@ -9,6 +9,6 @@
     <li class="social-media-list__item"><a class="social-media-list__link" href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}"><svg class="svg-icon" role="img" aria-hidden="true"><use xlink:href="{{ '/assets/images/social-icons.svg#twitter' | relative_url }}"></use></svg> <span class="username">{{ site.twitter_username| escape }}</span> <span class="visually-hidden">on Twitter</span></a></li>
   {%- endif -%}
   {%- if site.rss -%}
-    <li class="social-media-list__item"><a class="social-media-list__link" href="{{ 'feed.xml' | relative_url }}"><svg class="svg-icon" role="img" aria-hidden="true"><use xlink:href="{{ '/assets/images/social-icons.svg#rss' | relative_url }}"></use></svg> <span>{{ site.rss | escape }}</span></a></li>
+    <li class="social-media-list__item"><a class="social-media-list__link" href="{{ 'feed.xml' | relative_url }}"><svg class="svg-icon" role="img" aria-hidden="true"><use xlink:href="{{ '/assets/images/social-icons.svg#rss' | relative_url }}"></use></svg> <span class="username">{{ site.rss | escape }}</span></a></li>
     {%- endif -%}
 </ul>

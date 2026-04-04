@@ -78,14 +78,21 @@
 
 .theme--light {
     .post--card {
+        
         .post__title {
             color:var(--link-color);
         }
+        
         .post__meta {
             color: var(--text-color-dark-grey);
         }
+        
         .post__teaser {
             color: var(--text-color-grey);
+        }
+        
+        .post__link {
+            color: var(--link-color);
         }
     }
 }

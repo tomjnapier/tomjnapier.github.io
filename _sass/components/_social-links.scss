@@ -11,9 +11,26 @@
     &__link {
         display: inline-flex;
         align-items: center;
+        transition: var(--transition);
 
-        &, &:hover, &:visited {
+        .username {
+            text-decoration: underline;
+            text-decoration-thickness: 0.125rem;
+            text-underline-offset: 0.125rem;
+            transition: var(--transition);
+        }
+
+        &, &:visited {
             color: var(--footer-link-color);
+        }
+
+        &:hover {
+            color: var(--footer-link-color--hover);
+            
+            .username {
+                text-decoration-thickness: 0.25rem;
+            }
+
         }
 
         &:focus {

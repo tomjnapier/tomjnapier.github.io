@@ -98,11 +98,14 @@
         color: var(--footer-link-color);
 
         &:hover {
-            color: var(--footer-link-color);
+            color: var(--footer-link-color--hover);
         }
 
         &:visited {
             color: var(--footer-link-color);
+            &:hover {
+               color: var(--footer-link-color--hover); 
+            }
         }
     }
 

@@ -15,7 +15,7 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <section class="post-list">
       <ul class="post-list__items">
-        {%- for post in site.posts -%}
+        {%- for post in paginator.posts -%}
           {% include post-card.html post=post %}
         {%- endfor -%}
       </ul>
@@ -23,17 +23,23 @@ layout: default
   {%- endif -%}
 
   {% if paginator.total_pages > 1 %}
-  <ul>
-    {% if paginator.previous_page %}
-    <li>
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li>
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-    </li>
-    {% endif %}
-  </ul>
+    <nav aria-label="Article pages">
+      <ul class="pagination">
+        {% if paginator.previous_page %}
+        <li class="pagination__item pagination__item--newer">
+          <a class="pagination__link action action--reverse"  href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
+            <svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z"></path></svg>
+            Newer articles</a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="pagination__item pagination__item--newer">
+          <a class="pagination__link action" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older articles
+            <svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z"></path></svg>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
   {% endif %}
 </div>
