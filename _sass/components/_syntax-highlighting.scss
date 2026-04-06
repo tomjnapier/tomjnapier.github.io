@@ -12,7 +12,7 @@ code {
 
 pre, code {
   font-family: "Google Sans Code", monospace;
-  font-weight: 400;
+  font-weight: $base-font-weight;
 }
 
 .theme--light {
@@ -162,8 +162,8 @@ pre, code {
   /* Generic */
   .highlight .g   { color: #F8F8F2; }
   .highlight .ge  { font-style: italic; }
-  .highlight .gs  { font-weight: bold; }
-  .highlight .gh  { color: #BD93F9; font-weight: bold; } /* heading */
+  .highlight .gs  { font-weight: $base-bold-weight; }
+  .highlight .gh  { color: #BD93F9; font-weight: $base-bold-weight; } /* heading */
   .highlight .gu  { color: #BD93F9; }                    /* subheading */
   .highlight .go  { color: #F8F8F2; }                    /* output */
   .highlight .gp  { color: #9AABCD; }                    /* prompt */
@@ -301,7 +301,7 @@ pre, code {
 .highlight .g   { color: #1F1F1F; }
 .highlight .ge  { font-style: italic; }
 .highlight .gs  { font-weight: bold; }
-.highlight .gh  { color: #644AC9; font-weight: bold; } /* heading */
+.highlight .gh  { color: #644AC9; font-weight: $base-bold-weight; } /* heading */
 .highlight .gu  { color: #644AC9; }                    /* subheading */
 .highlight .go  { color: #1F1F1F; }                    /* output */
 .highlight .gp  { color: #6C664B; }                    /* prompt */
