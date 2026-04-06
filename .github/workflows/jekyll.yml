@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Minify JavaScript
-        run: npm run build:js
+        run: npx esbuild assets/js/app.js assets/js/theme-switcher.js --minify --outdir=assets/js/dist
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
