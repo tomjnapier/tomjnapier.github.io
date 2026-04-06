@@ -23,7 +23,7 @@
         color: var(--link-color);
         line-height: $base-line-height;
         padding: 0.2rem 0.5rem 0.5rem;
-        font-weight: 600;
+        font-weight: $base-heavy-weight;
         font-family: $header-font-family;
         font-size: 1.5rem;
         border-radius: var(--radius);
@@ -86,7 +86,7 @@
 
 .bypass-link {
     background-color: var(--focus-color);
-    font-weight: 500;
+    font-weight: $base-medium-weight;
     padding: 0.5rem;
     padding-left: 1rem;
   

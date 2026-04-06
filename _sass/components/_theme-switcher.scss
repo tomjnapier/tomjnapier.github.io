@@ -57,10 +57,6 @@
             svg {
                 stroke: var(--accent-two-on-color);
             }
-            
-            // [aria-current="true"] {
-            //     fill: var(--accent-two-on-color);
-            // }
         
         }
 
@@ -77,12 +73,6 @@
             fill: none;
             stroke-width: 2px;
         }
-
-        // &[aria-current="true"] {
-        //     svg {
-        //         fill: rgb(79 81 92);
-        //     }
-        // }
 
     }
 

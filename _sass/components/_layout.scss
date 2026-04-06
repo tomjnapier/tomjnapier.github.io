@@ -43,7 +43,7 @@
   letter-spacing: -1px;
   line-height: 1;
   font-family: $header-font-family;
-  font-weight: 600;
+  font-weight: $base-heavy-weight;
 
   @include media-query($on-tablet) {
     @include relative-font-size(4);
