@@ -42,11 +42,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      
-      - name: Install dependencies
-        run: npm install
-      - name: Minify JavaScript
-        run: npx esbuild assets/js/app.js assets/js/theme-switcher.js --minify --outdir=assets/js/dist
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
