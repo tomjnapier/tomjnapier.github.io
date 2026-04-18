@@ -68,7 +68,7 @@ jobs:
           npm install -g wait-on
           npm install -g serve
       - name: Serve site and run accessibility checks
-      - run: |
+        run: |
           serve _site &
           wait-on http://localhost:3000
           axe http://localhost:3000 --exit
