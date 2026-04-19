@@ -65,8 +65,14 @@ jobs:
         with:
           name: github-pages  # This matches the upload-artifact name
           path: _site
+      - name: Extract artifact
+        run: |
+          cd _site
+          tar -xf artifact.tar
+          rm artifact.tar
+          cd ..
       - name: Install dependencies
-        run: | 
+        run: |
           npm install -g @axe-core/cli@latest
           npm install -g wait-on
           npm install -g serve
