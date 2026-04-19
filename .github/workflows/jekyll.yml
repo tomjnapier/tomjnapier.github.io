@@ -88,8 +88,11 @@ jobs:
           PASSED=0
           FAILED=0
 
-          URLS=$(find _site -name "*.html" -type f | sed 's|_site/||g; s|index.html||g; s|\.html||g' | sed 's|^|http://localhost:3000/|g' | sed 's|http://localhost:3000//|http://localhost:3000/|g' | sort | uniq)
-
+          URLS=$(grep -o '<loc>[^<]*</loc>' _site/sitemap.xml \
+            | sed 's/<loc>//; s#</loc>##' \
+            | sed 's#http://localhost:4000#http://localhost:3000#g' \
+            | sort -u)
+            
           for url in $URLS; do
             if axe "$url" --exit; then
               echo "::notice::✓ $url passed"
