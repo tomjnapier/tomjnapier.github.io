@@ -1,4 +1,4 @@
-<a aria-label="some rubbish label" href="#content" class="bypass-link">Skip to main content</a>
+<a href="#content" class="bypass-link">Skip to main content</a>
 <header class="site-header">
 
   <div class="wrapper">
@@ -24,7 +24,7 @@
 
     {%- if nav_pages -%}
       <nav class="site-nav" aria-labelledby="navigation-menu-heading">
-        <h5 id="navigation-menu-heading" class="visually-hidden">Main navigation</h5>
+        <h2 id="navigation-menu-heading" class="visually-hidden">Main navigation</h2>
         <ul class="site-nav__links">
           {%- for nav_page in nav_pages -%}
             {%- assign navTitle = nav_page.title -%}
