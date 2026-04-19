@@ -61,7 +61,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Download build artifact  # Get the built site from the build job
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: github-pages  # This matches the upload-artifact name
           path: _site
@@ -77,8 +77,8 @@ jobs:
           npm install -g wait-on
           npm install -g serve
       - name: Serve site and run accessibility checks
-        run: |
-          serve _site/ &
+        run: | # serve site, with no http logs (/dev/null)
+          serve _site/ > /dev/null 2>&1 &
           wait-on http://localhost:3000
 
           URLS=$(find _site -name "*.html" -type f | sed 's|_site/||g; s|index.html||g; s|\.html||g' | sed 's|^|http://localhost:3000/|g' | sed 's|http://localhost:3000//|http://localhost:3000/|g' | sort | uniq)
