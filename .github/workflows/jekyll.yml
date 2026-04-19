@@ -75,7 +75,10 @@ jobs:
           serve _site/ &
           wait-on http://localhost:3000
           URLS=$(curl -s http://localhost:3000/sitemap.xml | grep -o '<loc>[^<]*</loc>' | sed 's/<loc>//g; s/<\/loc>//g')
-          for url in $URLS; do echo "Testing $url"; axe "$url"; done
+          for url in $URLS; do
+            echo "Testing $url"
+            axe "$url" --exit || exit 1 # Exit on first failure, or remove --exit to continue
+          done
 
   # Deployment job
   deploy:
