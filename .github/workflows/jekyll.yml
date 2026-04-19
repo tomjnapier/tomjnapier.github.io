@@ -81,9 +81,6 @@ jobs:
           serve _site/ &
           wait-on http://localhost:3000
 
-          echo "Contents of _site:"
-          ls -la _site/
-
           URLS=$(find _site -name "*.html" -type f | sed 's|_site/||g; s|index.html||g; s|\.html||g' | sed 's|^|http://localhost:3000/|g' | sed 's|http://localhost:3000//|http://localhost:3000/|g' | sort | uniq)
           for url in $URLS; do
             echo "Testing $url"
