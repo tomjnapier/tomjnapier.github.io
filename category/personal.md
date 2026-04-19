@@ -1,5 +1,5 @@
 ---
-permalink: "/rpersonal"
+permalink: "/personal"
 category: "personal"
 layout: "categories"
 title: "Personal"

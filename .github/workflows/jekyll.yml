@@ -74,7 +74,7 @@ jobs:
         run: |
           serve _site/ &
           wait-on http://localhost:3000
-          URLS=$(curl -s http://localhost:3000/sitemap.xml | grep -o '<loc>[^<]*</loc>' | sed 's/<loc>//g; s/<\/loc>//g')
+          URLS=$(find _site -name "*.html" -type f | sed 's|_site/||g; s|index.html||g; s|\.html||g' | sed 's|^|http://localhost:3000/|g' | sed 's|http://localhost:3000//|http://localhost:3000/|g' | sort | uniq)
           for url in $URLS; do
             echo "Testing $url"
             axe "$url" --exit || exit 1 # Exit on first failure, or remove --exit to continue
