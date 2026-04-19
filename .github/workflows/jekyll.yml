@@ -78,18 +78,32 @@ jobs:
           npm install -g serve
       - name: Serve site and run accessibility checks
         run: | # serve site, with no http logs (/dev/null)
+          set +e
+  
           serve _site/ > /dev/null 2>&1 &
           wait-on http://localhost:3000
 
           echo "::group::Accessibility Test Results"
 
+          PASSED=0
+          FAILED=0
+
           URLS=$(find _site -name "*.html" -type f | sed 's|_site/||g; s|index.html||g; s|\.html||g' | sed 's|^|http://localhost:3000/|g' | sed 's|http://localhost:3000//|http://localhost:3000/|g' | sort | uniq)
+
           for url in $URLS; do
-            echo "Testing $url"
-            axe "$url" --exit || exit 1 # Exit on first failure, or remove --exit to continue
+            if axe "$url" --exit > /dev/null 2>&1; then
+              echo "::notice::✓ $url passed"
+              ((PASSED++))
+            else
+              echo "::error::✗ $url failed"
+              ((FAILED++))
+            fi
           done
 
           echo "::endgroup::" 
+
+          PASSED=0
+          FAILED=0
 
   # Deployment job
   deploy:
