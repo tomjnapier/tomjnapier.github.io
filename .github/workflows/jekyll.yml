@@ -73,7 +73,9 @@ jobs:
           cd ..
       - name: Install dependencies
         run: |
+          # Keep ChromeDriver aligned with the Chrome version shipped on the runner.
           npm install -g @axe-core/cli@latest
+          npm install -g chromedriver@latest
           npm install -g wait-on
           npm install -g serve
       - name: Serve site and run accessibility checks
