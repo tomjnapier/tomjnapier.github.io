@@ -73,11 +73,11 @@ jobs:
           cd ..
       - name: Install dependencies
         run: |
-          # Keep ChromeDriver aligned with the Chrome version shipped on the runner.
           npm install -g @axe-core/cli@latest
-          npm install -g chromedriver@latest
           npm install -g wait-on
           npm install -g serve
+          npx --yes browser-driver-manager install chrome
+          echo "CHROMEDRIVER_PATH=$(npx --yes browser-driver-manager which | sed -n 's/^CHROMEDRIVER_TEST_PATH=\"\(.*\)\"$/\1/p')" >> "$GITHUB_ENV"
       - name: Serve site and run accessibility checks
         run: | # serve site, with no http logs (/dev/null)
           set +e
@@ -93,7 +93,7 @@ jobs:
           URLS=$(find _site -name "*.html" -type f | sed 's|_site/||g; s|index.html||g; s|\.html||g' | sed 's|^|http://localhost:3000/|g' | sed 's|http://localhost:3000//|http://localhost:3000/|g' | sort | uniq)
 
           for url in $URLS; do
-            if axe "$url" --exit; then
+            if axe "$url" --exit --chromedriver-path "$CHROMEDRIVER_PATH"; then
               echo "::notice::✓ $url passed"
               ((PASSED++))
             else
